@@ -8,7 +8,6 @@
 <style>
 body {
     margin: 0;
-    min-height: 100vh;
     background: #f4f4f4;
     font-family: 'Inter', Arial, sans-serif;
     font-size: 13px;
@@ -17,12 +16,16 @@ body {
     color: #222;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.container {
+.page-wrapper {
     width: 60%;
     max-width: 1100px;
+    padding: 40px 0;
+}
+
+/* TOP TWO COLUMN SECTION */
+.container {
     background: #fff;
     display: grid;
     grid-template-columns: 58% 42%;
@@ -43,22 +46,20 @@ body {
     color: #444;
 }
 
-.left-column a {
+.left-column a,
+.links a {
     color: #0066cc;
     text-decoration: none;
     font-weight: 600;
 }
 
-.left-column a:hover {
+.left-column a:hover,
+.links a:hover {
     color: #000;
 }
 
 .links {
     margin-top: 25px;
-}
-
-.links a {
-    display: inline-block;
 }
 
 .right-column {
@@ -70,27 +71,49 @@ body {
 .right-column img {
     width: 100%;
     max-width: 360px;
-    height: auto;
     border-radius: 10px;
     object-fit: cover;
-    display: block;
 }
 
+/* PHOTO GRID SECTION */
+.gallery-section {
+    margin-top: 35px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px;
+}
+
+/* each cell width = row width / 4 */
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* MOBILE */
 @media (max-width: 900px) {
-    body {
-        padding: 20px;
-        align-items: flex-start;
+    .page-wrapper {
+        width: 95%;
+        padding: 20px 0;
     }
 
     .container {
-        width: 95%;
         grid-template-columns: 1fr;
         gap: 25px;
         padding: 25px;
     }
 
-    .right-column img {
-        max-width: 280px;
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
@@ -98,45 +121,66 @@ body {
 
 <body>
 
-<div class="container">
+<div class="page-wrapper">
 
-    <!-- LEFT COLUMN -->
-    <div class="left-column">
-        <h1>G Harish Kumar</h1>
+    <!-- TOP SECTION -->
+    <div class="container">
 
-        <p>
-            I work in tech and enjoy travel, design, and creative projects.<br><br>
+        <div class="left-column">
+            <h1>G Harish Kumar</h1>
 
-            <strong>Bio:</strong><br>
-            Originally from Hyderabad, I studied CS Engineering at University of Madras.<br>
+            <p>
+                I work in tech and enjoy travel, design, and creative projects.<br><br>
 
-            I lived in the US and Bangalore, immigrated to Australia in 2014, and now travel and live around Southeast Asia.<br><br>
+                <strong>Bio:</strong><br>
+                Originally from Hyderabad, I studied CS Engineering at University of Madras.<br>
 
-            <strong>Work:</strong><br>
-            Enterprise business applications, mainly 
-            <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
-                EnterpriseOne - Oracle
-            </a><br>
+                I lived in the US and Bangalore, immigrated to Australia in 2014, and now travel and live around Southeast Asia.<br><br>
 
-            Worked at 
-            <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida), 
-            <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore), 
-            <a href="https://nufarm.com/" target="_blank">Nufarm</a>, and 
-            <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne).<br><br>
+                <strong>Work:</strong><br>
+                Enterprise business applications, mainly
+                <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
+                    EnterpriseOne - Oracle
+                </a><br>
 
-            I also enjoy investing, stocks, and crypto.<br>
+                Worked at
+                <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida),
+                <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore),
+                <a href="https://nufarm.com/" target="_blank">Nufarm</a>, and
+                <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne).<br><br>
 
-            Interests include yoga, books, spirituality, psychology, films, and sports.
-        </p>
+                Interests include yoga, books, spirituality, psychology, films, sports.
+            </p>
 
-        <div class="links">
-            <a href="/gallery">Gallery</a>
+            <div class="links">
+                <a href="/gallery">Gallery</a>
+            </div>
         </div>
+
+        <div class="right-column">
+            <img src="Suit.avif" alt="Profile Image">
+        </div>
+
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="right-column">
-        <img src="Suit.avif" alt="Profile Image">
+    <!-- GRID SECTION BELOW -->
+    <div class="gallery-section">
+        <div class="photo-grid">
+            <img src="grid/1.jpg">
+            <img src="grid/2.jpg">
+            <img src="grid/3.jpg">
+            <img src="grid/4.jpg">
+
+            <img src="grid/5.jpg">
+            <img src="grid/6.jpg">
+            <img src="grid/7.jpg">
+            <img src="grid/8.jpg">
+
+            <img src="grid/9.jpg">
+            <img src="grid/10.jpg">
+            <img src="grid/11.jpg">
+            <img src="grid/12.jpg">
+        </div>
     </div>
 
 </div>
