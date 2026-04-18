@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Bio Site</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .container {
+        width: 60%;
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        align-items: center;
+    }
+
+    .left-column h1 {
+        margin-top: 0;
+        font-size: 32px;
+    }
+
+    .left-column p {
+        line-height: 1.6;
+        color: #444;
+    }
+
+    .links {
+        margin-top: 25px;
+    }
+
+    .links a {
+        display: block;
+        margin-bottom: 12px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: bold;
+    }
+
+    .links a:hover {
+        color: #000;
+    }
+
+    .right-column img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+        .container {
+            width: 90%;
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
+        <h1>G Harish Kumar</h1>
+        <p>            
+            I work in tech, enjoy travel, design, and creative projects.  
+            
+            Bio :
+
+            Originally from Hyderabad, I studied CS engg - University of Madras. I lived in the US & Bangalore and immigrated to Australia in 2014 and now travel and live around SE Asia ( Bali, Chiang mai, Pokhara, Goa etc). 
+
+            Work: I have worked on enterprise business apps primarily working on E1(Oracle).
+
+            Worked at ICS (Florida), Oracle (Bangalore), Nufarm, Rinnnai (Melbourne)
+
+            I am also an avid investor and like to trade Stocks/Crypto
+
+
+            My interests include yoga, tech, books, spirituality, psychology, films, sports 
+        </p>
+
+        <div class="links">
+            <a href="fungibledroid.github.io/gallery">Gallery</a>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+        <img src="Suit.avif" alt="Profile Image">
+    </div>
+
+</div>
+</body>
+</html>
