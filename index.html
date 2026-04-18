@@ -3,67 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Bio Site</title>
+<title>Bio Profile</title>
 
 <style>
 body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f4f4;
     font-family: 'Inter', Arial, sans-serif;
     font-size: 13px;
     line-height: 1.8;
     letter-spacing: 0.4px;
-    max-width: 900px;
-    margin: auto;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-</style>
+
+.container {
+    width: 60%;
+    max-width: 1100px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 58% 42%;
+    gap: 45px;
+    padding: 45px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+
+.left-column h1 {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.left-column p {
+    margin: 0;
+    color: #444;
+}
+
+.links {
+    margin-top: 25px;
+}
+
+.links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.links a:hover {
+    color: #000;
+}
+
+.right-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-column img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
     .container {
-        width: 60%;
-        background: white;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        padding: 40px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        align-items: center;
-    }
-
-    .left-column h1 {
-        margin-top: 0;
-        font-size: 32px;
-    }
-
-    .left-column p {
-        line-height: 1.6;
-        color: #444;
-    }
-
-    .links {
-        margin-top: 25px;
-    }
-
-    .links a {
-        display: block;
-        margin-bottom: 12px;
-        text-decoration: none;
-        color: #0066cc;
-        font-weight: bold;
-    }
-
-    .links a:hover {
-        color: #000;
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
     }
 
     .right-column img {
-        width: 100%;
-        border-radius: 10px;
-        object-fit: cover;
+        max-width: 280px;
     }
-
-    @media (max-width: 900px) {
-        .container {
-            width: 90%;
-            grid-template-columns: 1fr;
-        }
-    }
+}
 </style>
 </head>
 
@@ -74,22 +100,23 @@ body {
     <!-- LEFT COLUMN -->
     <div class="left-column">
         <h1>G Harish Kumar</h1>
-        <p>            
-            I work in tech, enjoy travel, design, and creative projects. 
-            <br>  
-            Bio :
-            <br>
-            Originally from Hyderabad, I studied CS engg - University of Madras. 
-            <br>
-            I lived in the US & Bangalore and immigrated to Australia in 2014 and now travel and live around SE Asia (See Gallery)
-            <br>
-            Work: I have worked on enterprise business apps primarily working on E1(Oracle).
-             <br>    
-            Worked at ICS (Florida), Oracle (Bangalore), Nufarm, Rinnnai (Melbourne)
-             <br>
-            I am also an avid investor and like to trade Stocks/Crypto
-             <br>
-            My interests include yoga, tech, books, spirituality, psychology, films, sports 
+
+        <p>
+            I work in tech and enjoy travel, design, and creative projects.<br><br>
+
+            <strong>Bio:</strong><br>
+            Originally from Hyderabad, I studied CS Engineering at University of Madras.<br>
+
+            I lived in the US and Bangalore, immigrated to Australia in 2014, and now travel and live around Southeast Asia.<br><br>
+
+            <strong>Work:</strong><br>
+            Enterprise business applications, mainly Oracle E1.<br>
+
+            Worked at ICS (Florida), Oracle (Bangalore), Nufarm, and Rinnai (Melbourne).<br><br>
+
+            I also enjoy investing, stocks, and crypto.<br>
+
+            Interests include yoga, books, spirituality, psychology, films, and sports.
         </p>
 
         <div class="links">
@@ -103,5 +130,6 @@ body {
     </div>
 
 </div>
+
 </body>
 </html>
