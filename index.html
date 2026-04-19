@@ -1,123 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>        
-</head>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bio</title>
-    
+
 <style>
-.work-section {
-    margin-top: 35px;
-    background: #fff;
-    padding: 40px 45px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    border-radius: 8px;
-}
-
-.work-section h2 {
-    width: 80%;              /* match photo grid width */
-    margin: 0 0 18px 0;
-    font-size: 26px;
-    font-weight: 600;
-    color: #111;
-}
-
-.work-section p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.9;
-    color: #444;
-}
+/* -------------------- FONT -------------------- */
 @font-face {
     font-family: 'Bosch';
     src: url('fonts/Bosch.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
 }
 
-/* Use Bosch font for your name */
-.logo {
-    font-family: 'Bosch', serif;
-    font-size: 62px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    line-height: 1;
-    margin: 0 0 20px 0;
-    color: #111;
-}
-
+/* -------------------- PAGE -------------------- */
 body {
     margin: 0;
-    background: #fafafa;
-    font-family: 'Inter', Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.8;
-    letter-spacing: 0.4px;
+    background: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.9;
     color: #222;
     display: flex;
     justify-content: center;
-}    
+}
 
 .page-wrapper {
-    width: 60%;
-    max-width: 1100px;
+    width: 100%;
     padding: 40px 0;
 }
 
-/* TOP TWO COLUMN SECTION */
-.container {
-    width: 80%;              /* match photo grid width */
-    max-width: 825px;        /* proportional to previous size */
+/* -------------------- SAME WIDTH FOR ALL 3 SECTIONS -------------------- */
+.container,
+.work-section,
+.gallery-section {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto 35px auto;
     background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
 
+/* -------------------- TOP 2 COLUMN SECTION -------------------- */
+.container {
     display: grid;
     grid-template-columns: 55% 45%;
     gap: 45px;
-
     padding: 45px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    border-radius: 8px;
+}
 
-    margin-left: auto;
-    margin-right: auto;
-}    
-    
-.left-column h1 {
+/* LEFT */
+.left-column h1.logo {
     font-family: 'Bosch', serif;
-    font-size: 70px;
+    font-size: 64px;
     font-weight: normal;
-    letter-spacing: 1px;
-    line-height: 1;    
+    margin: 0 0 20px 0;
+    line-height: 1;
     color: #111;
-    margin: 0 0 20px 0;    
 }
 
 .left-column p {
     margin: 0;
-    color: #444;
 }
 
-.left-column a,
-.links a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.left-column a:hover,
-.links a:hover {
-    color: #000;
-}
-
-.links {
-    margin-top: 25px;
-}
-
+/* RIGHT IMAGE */
 .right-column {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .right-column img {
@@ -127,39 +77,61 @@ body {
     object-fit: cover;
 }
 
-/* PHOTO GRID SECTION */
-.gallery-section {
-    margin-top: 35px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    border-radius: 8px;
+/* LINKS */
+.gallery-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a5fb4;
+    text-decoration: none;
+}
 
-    width: 85%;          /* 25% smaller */
-    margin-left: auto;
-    margin-right: auto;
+.gallery-link:hover {
+    color: #000;
+}
+
+/* -------------------- WORK SECTION -------------------- */
+.work-section {
+    padding: 40px 45px;
+}
+
+.work-section h2 {
+    margin: 0 0 18px 0;
+    font-size: 28px;
+    color: #111;
+}
+
+.work-section p {
+    margin-top: 20px;
+}
+
+/* -------------------- PHOTO GRID -------------------- */
+.gallery-section {
+    padding: 20px;
 }
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-/* each cell width = row width / 4 */
 .photo-grid img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    display: block;
     border-radius: 6px;
+    display: block;
 }
 
-/* MOBILE */
+/* -------------------- MOBILE -------------------- */
 @media (max-width: 900px) {
-    .page-wrapper {
-        width: 95%;
-        padding: 20px 0;
+
+    .container,
+    .work-section,
+    .gallery-section {
+        width: 94%;
     }
 
     .container {
@@ -168,25 +140,13 @@ body {
         padding: 25px;
     }
 
+    .left-column h1.logo {
+        font-size: 46px;
+    }
+
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-.left-column,
-.left-column p,
-.left-column strong {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 14px;
-    line-height: 1.9;
-    letter-spacing: 0.2px;
-    color: #222;
-}
-
-.left-column h1 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.3;
 }
 </style>
 </head>
@@ -198,80 +158,66 @@ body {
     <!-- TOP SECTION -->
     <div class="container">
 
+        <!-- LEFT COLUMN -->
         <div class="left-column">
-            <h1 class="logo">G Harish Kumar</h1>        
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.E (CS) - University of Madras
-            
-            <p><br>
-                I work in tech and enjoy travel, design, and creative projects.                
-                Originally from Hyderabad, I lived/worked in the Florida, Bangalore, immigrated to Australia in 2014, and now travel and live around Southeast Asia.<br><br>
-                <br>                
-                Interests include yoga, books, spirituality, psychology, films, sports.            
-                I am an avid investor in Stocks & Crypto.                
-            </p>
-    
-            <div class="links">                
-                <a href="/gallery" class="gallery-link">Gallery →</a>
-            </div>
+            <h1 class="logo">G Harish Kumar</h1>
 
-            
-            <style>
-            .gallery-link {
-                display: inline-block;
-                margin-top: 18px;
-                font-size: 14px;
-                font-weight: 600;
-                color: #1a5fb4;
-                text-decoration: none;
-                letter-spacing: 0.3px;
-                transition: 0.2s ease;
-            }
-        
-            .gallery-link:hover {
-                color: #000;
-                transform: translateX(3px);
-            }
-            </style>
-                    </div>
-            
-                    <div class="right-column">
-                        <img src="Suit.avif" alt="Profile Image">
-                    </div>
-            
-                </div>
+            B.E (CS) - University of Madras
+
+            <p><br>
+                I work in tech and enjoy travel, design, and creative projects.
+                Originally from Hyderabad, I lived/worked in Florida and Bangalore,
+                immigrated to Australia in 2014, and now travel and live around Southeast Asia.
+                <br><br>
+
+                Interests include yoga, books, spirituality, psychology, films, sports.
+                I am an avid investor in Stocks & Crypto.
+            </p>
+
+            <a href="/gallery" class="gallery-link">Gallery →</a>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <img src="Suit.avif" alt="Profile Image">
+        </div>
+
+    </div>
+
     <!-- WORK SECTION -->
     <div class="work-section">
-        <h3>Work</h3> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.E (CS) - University of Madras
-            <div class="links">                
-                <a href="Harish_Resume_2025.pdf" class="gallery-link">Resume→</a>
-            </div>          
-            <br>
-            Enterprise business applications, mainly
-            <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
-                EnterpriseOne - Oracle
-            </a>
-            <br>
-            <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida) - Developer,
-            <br>
-            <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore) - Principal Tech Analyst,
-            <br>
-            <a href="https://nufarm.com/" target="_blank">Nufarm</a> - E1 Consultant, 
-            <br>
-            <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne) - Supply Chain Analyst.<br><br>                
+
+        <h2>Work</h2>
+
+        B.E (CS) - University of Madras &nbsp;&nbsp;
+        <a href="Harish_Resume_2025.pdf" class="gallery-link">Resume →</a>
+
+        <br><br>
+
+        Enterprise business applications, mainly
+        <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
+            EnterpriseOne - Oracle
+        </a>
+
+        <br><br>
+
+        <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida) - Developer<br>
+        <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore) - Principal Tech Analyst<br>
+        <a href="https://nufarm.com/" target="_blank">Nufarm</a> - E1 Consultant<br>
+        <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne) - Supply Chain Analyst
+
         <p>
             I have worked in enterprise software across consulting, manufacturing,
             and business transformation projects.
-    
-            My core experience has been in ERP systems, especially
-            EnterpriseOne (Oracle), business applications, process improvement,
-            integrations, and supporting operations across multiple regions.
-    
-            Previous organizations include ICS, Oracle, Nufarm, and Rinnai.
+
+            My core experience has been in ERP systems, especially EnterpriseOne,
+            business applications, process improvement, integrations, and supporting
+            operations across multiple regions.
         </p>
+
     </div>
-    
-    <!-- GRID SECTION BELOW -->
+
+    <!-- PHOTO GRID -->
     <div class="gallery-section">
         <div class="photo-grid">
             <img src="grid/1.jpg">
