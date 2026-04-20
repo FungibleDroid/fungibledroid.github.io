@@ -1,87 +1,20 @@
+```html id="c9m4k2"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bio</title>
-<style>    
-.work-grid {
-    display: grid;
-    grid-template-columns: 72% 28%;
-    grid-template-rows: auto 120px auto;
 
-    border: 1px solid #ddd;   /* outer border only */
-    border-radius: 6px;
-    overflow: hidden;
-}
-.work-grid .box {
-    padding: 18px;
-    background: #fff;
-    border: none;
-    box-sizing: border-box;
-}
-    
-/* layout */
-.section1 {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-}
+<style>
 
-.section2 {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.section3 {
-    grid-column: 2;
-    grid-row: 2;
-    background: #fafafa;
-}
-
-.section4 {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #444;
-}
-
-/* logo */
-.section2 img {
-    width: 100%;
-    max-width: 180px;
-    object-fit: contain;
-}
-
-/* mobile */
-@media (max-width: 900px) {
-    .work-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .section1,
-    .section2,
-    .section3,
-    .section4 {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    .section3 {
-        display: none;
-    }
-}
-/* -------------------- FONT -------------------- */
+/* ---------------- FONT ---------------- */
 @font-face {
     font-family: 'Bosch';
     src: url('fonts/Bosch.otf') format('opentype');
 }
 
-/* -------------------- PAGE -------------------- */
+/* ---------------- PAGE BACKGROUND ---------------- */
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -89,33 +22,34 @@ body {
     line-height: 1.9;
     color: #222;
 
-    background-color: #f8f6f0;
-    background-image: url("images/nomad-bg.jpg");
-    background-repeat: repeat;
-    background-size: 900px auto;
+    background: #f8f6f0 url("images/nomad-bg.jpg") repeat;
+    background-size: 1100px auto;
 
     display: flex;
     justify-content: center;
 }
-</style>
+
+/* ---------------- WRAPPER ---------------- */
 .page-wrapper {
     width: 100%;
     padding: 40px 0;
 }
 
-/* -------------------- SAME WIDTH FOR ALL 3 SECTIONS -------------------- */
+/* ---------------- WHITE CARDS ---------------- */
 .container,
 .work-section,
 .gallery-section {
     width: 80%;
     max-width: 900px;
     margin: 0 auto 35px auto;
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     border-radius: 8px;
 }
 
-/* -------------------- TOP 2 COLUMN SECTION -------------------- */
+/* ================================================= */
+/* TOP SECTION */
+/* ================================================= */
 .container {
     display: grid;
     grid-template-columns: 55% 45%;
@@ -123,21 +57,18 @@ body {
     padding: 45px;
 }
 
-/* LEFT */
-.left-column h3.logo {
+.left-column h1.logo {
     font-family: 'Bosch', serif;
-    font-size: 45px;
-    font-weight: normal;
+    font-size: 60px;
     margin: 0 0 20px 0;
     line-height: 1;
-    color: #111;
+    font-weight: normal;
 }
 
 .left-column p {
     margin: 0;
 }
 
-/* RIGHT IMAGE */
 .right-column {
     display: flex;
     justify-content: center;
@@ -151,13 +82,12 @@ body {
     object-fit: cover;
 }
 
-/* LINKS */
+/* links */
 .gallery-link {
     display: inline-block;
     margin-top: 18px;
-    font-size: 14px;
-    font-weight: 600;
     color: #1a5fb4;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -165,22 +95,55 @@ body {
     color: #000;
 }
 
-/* -------------------- WORK SECTION -------------------- */
+/* ================================================= */
+/* WORK SECTION */
+/* ================================================= */
 .work-section {
-    padding: 40px 45px;
+    padding: 35px;
 }
 
-.work-section h2 {
-    margin: 0 0 18px 0;
-    font-size: 28px;
-    color: #111;
+.work-grid {
+    display: grid;
+    grid-template-columns: 72% 28%;
+    grid-template-rows: auto 120px auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.work-section p {
-    margin-top: 20px;
+.work-grid .box {
+    padding: 18px;
+    background: #fff;
 }
 
-/* -------------------- PHOTO GRID -------------------- */
+.section1 { grid-column: 1; grid-row: 1 / span 2; }
+.section2 {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section3 {
+    grid-column: 2;
+    grid-row: 2;
+    background: #fafafa;
+}
+.section4 {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    color: #444;
+}
+
+.section2 img {
+    width: 100%;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+/* ================================================= */
+/* GALLERY */
+/* ================================================= */
 .gallery-section {
     padding: 20px;
 }
@@ -199,28 +162,48 @@ body {
     display: block;
 }
 
-/* -------------------- MOBILE -------------------- */
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
 @media (max-width: 900px) {
 
-    .container,
-    .work-section,
-    .gallery-section {
-        width: 94%;
-    }
+.container,
+.work-section,
+.gallery-section {
+    width: 94%;
+}
 
-    .container {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 25px;
-    }
+.container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 25px;
+}
 
-    .left-column h1.logo {
-        font-size: 46px;
-    }
+.left-column h1.logo {
+    font-size: 44px;
+}
 
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.work-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.section1,
+.section2,
+.section3,
+.section4 {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+.section3 {
+    display: none;
+}
+
+.photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 }
 </style>
 </head>
@@ -229,88 +212,99 @@ body {
 
 <div class="page-wrapper">
 
+    <!-- ================================================= -->
     <!-- TOP SECTION -->
+    <!-- ================================================= -->
     <div class="container">
 
-        <!-- LEFT COLUMN -->
         <div class="left-column">
-            <h3 class="logo">G Harish Kumar</h3>
-            <p><br>
-                I work in tech and enjoy travel, design, and creative projects.
+            <h1 class="logo">G Harish Kumar</h1>
+
+            <p>
+                I work in tech and enjoy travel, design and creative projects.
                 Originally from Hyderabad, I lived/worked in Florida and Bangalore,
                 immigrated to Australia in 2014, and now travel and live around Southeast Asia.
                 <br><br>
 
-                Interests include yoga, books, spirituality, psychology, films, sports.
-                I am an avid investor in Stocks & Crypto.
+                Interests include yoga, books, spirituality, psychology,
+                films, sports and investing in Stocks & Crypto.
             </p>
 
             <a href="/gallery" class="gallery-link">Gallery →</a>
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="right-column">
             <img src="Suit.avif" alt="Profile Image">
         </div>
 
     </div>
 
+    <!-- ================================================= -->
     <!-- WORK SECTION -->
-<!-- REPLACE your current WORK SECTION with this -->
+    <!-- ================================================= -->
+    <div class="work-section">
 
-<div class="work-section">
+        <div class="work-grid">
 
-    <div class="work-grid">
+            <!-- BOX 1 -->
+            <div class="box section1">
 
-        <!-- SECTION 1 -->
-        <div class="box section1">
-            <h2>Work</h2>
+                <h2>Work</h2>
 
-            B.E (CS) - University of Madras
-            &nbsp;&nbsp;&nbsp;
-            <a href="Harish_Resume_2025.pdf" class="gallery-link">Resume →</a>
+                B.E (CS) - University of Madras
+                &nbsp;&nbsp;&nbsp;
+                <a href="Harish_Resume_2025.pdf" class="gallery-link">Resume →</a>
 
-            <br><br>
+                <br><br>
 
-            Enterprise business applications, mainly
-            <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
-                EnterpriseOne - Oracle
-            </a>
+                Enterprise business applications, mainly
+                <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/" target="_blank">
+                    EnterpriseOne - Oracle
+                </a>
 
-            <br><br>
+                <br><br>
 
-            <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida) - Developer<br>
-            <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore) - Principal Tech Analyst<br>
-            <a href="https://nufarm.com/" target="_blank">Nufarm</a> - E1 Consultant<br>
-            <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne) - Supply Chain Analyst
-        </div>
+                <a href="https://www.rfsmart.com/" target="_blank">ICS</a> (Florida) - Developer<br>
+                <a href="https://www.oracle.com/" target="_blank">Oracle</a> (Bangalore) - Principal Tech Analyst<br>
+                <a href="https://nufarm.com/" target="_blank">Nufarm</a> - E1 Consultant<br>
+                <a href="https://www.rinnai.us/" target="_blank">Rinnai</a> (Melbourne) - Supply Chain Analyst
 
-        <!-- SECTION 2 -->
-        <div class="box section2">
-            <img src="/images/logo.jpg" alt="Company Logos">
-        </div>
+            </div>
 
-        <!-- SECTION 3 EMPTY -->
-        <div class="box section3"></div>
+            <!-- BOX 2 -->
+            <div class="box section2">
+                <img src="images/logo.jpg" alt="Company Logos">
+            </div>
 
-        <!-- SECTION 4 -->
-        <div class="box section4">
-            I have worked in enterprise software across consulting, logistics, manufacturing and business transformation projects.
+            <!-- BOX 3 EMPTY -->
+            <div class="box section3"></div>
 
-            My core experience has been in ERP systems, especially EnterpriseOne, integrations,
-            process improvement and operations across multiple regions.
-            <br>
-            Experienced in migrating and porting master data from legacy systems into ERP using batch import processes and SQL-based workflows. 
-            Skilled in data cleansing, validation, reconciliation, and transformation to ensure high data quality and consistency. 
-            Strong background supporting end-to-end system migration, implementation, and data readiness initiatives.
+            <!-- BOX 4 -->
+            <div class="box section4">
+
+                I have worked in enterprise software across consulting,
+                logistics, manufacturing and business transformation projects.
+
+                My core experience has been in ERP systems, especially
+                EnterpriseOne, integrations, process improvement and operations.
+
+                <br><br>
+
+                Experienced in migrating and porting master data from
+                legacy systems into ERP using batch imports and SQL workflows.
+                Skilled in data cleansing, validation, reconciliation and transformation.
+
+            </div>
 
         </div>
 
     </div>
-</div>    
-    
+
+    <!-- ================================================= -->
     <!-- PHOTO GRID -->
+    <!-- ================================================= -->
     <div class="gallery-section">
+
         <div class="photo-grid">
             <img src="grid/1.jpg">
             <img src="grid/2.jpg">
@@ -327,9 +321,11 @@ body {
             <img src="grid/11.jpg">
             <img src="grid/12.jpg">
         </div>
+
     </div>
 
 </div>
 
 </body>
 </html>
+```
