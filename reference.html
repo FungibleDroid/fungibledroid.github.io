@@ -1,36 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Reference</title>
-	</head>
-	<body>
-		<a href="">  </a>
-        <h1>Reference :</h1>        
-            <a href="https://www.navalmanack.com/almanack-of-naval-ravikant/navals-recommended-reading"> Naval Reading List</a><br>
-            <a href="/knowledge/Marc.html">Marc Andresson book reading list</a><br><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference & Resources</title>
+    <style>
+        /* Base page background matching minimalist aesthetic */
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #FFF5F5;
+            color: #2c3e50;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
-            <a href="/knowledge/HammingFramework.html"> Richard Hamming Framework</a><br>
-			<a href="/knowledge/polgar.html"> Polgar Experiment</a><br>
-			<a href="https://www.loot-drop.io/dashboard">Startup graveyard</a><br>
-			<a href="https://towardsdatascience.com/how-i-studied-llms-in-two-weeks-a-comprehensive-roadmap-e8ac19667a31/"> AI Reading List</a><br>
-						
-			<a href="">  </a><br>
-			<a href="">  </a><br>
-			<a href="">  </a><br>			
+        /* Centralized content block card */
+        .content-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 950px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f0d0d0;
+        }
 
-		<h2>Resources</h2>	
-			<a href="https://github.com/codecrafters-io/build-your-own-x"> Build your own x</a><br>			
-			<a href="https://github.com/rohitg00/ai-engineering-from-scratch/tree/main">AI from scratch</a><br>			
-			<a href="https://github.com/ashishps1/awesome-system-design-resources">System design resources</a><br>
-			<a href="https://github.com/patchy631/ai-engineering-hub">AI Engg Hub</a><br>		
-			<a href="https://sci-bot.ru/">Sci-bot : Research papers</a><br>				
-			<a href="">  </a><br>					
-			<a href="">  </a><br>					
-		<h2>Films</h2>	
-			<a href="https://www.imdb.com/list/ls093475404/">30 Films Sriram Raghavan</a><br>
-			<a href="/gallery999/">.</a><br>					
-			<a href="">  </a><br>							
-	</body>
-</html>	
+        /* Main Section Header styling */
+        h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #1a252f;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
 
+        /* Table structural formatting holding the 3 subsections side-by-side */
+        .sections-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
 
+        .sections-table td {
+            vertical-align: top;
+            padding: 0 15px;
+        }
+
+        /* First and last column padding adjustments for balance */
+        .sections-table td:first-child { padding-left: 0; }
+        .sections-table td:last-child { padding-right: 0; }
+
+        /* Subsection Headers */
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Clean Link lists */
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 12px;
+        }
+
+        /* Interactive and modern minimalist link styling */
+        .link-list a {
+            color: #34495e;
+            text-decoration: none;
+            font-size: 10.5pt;
+            font-weight: 500;
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+            border-bottom: 1px solid transparent;
+            display: inline-block;
+        }
+
+        .link-list a:hover {
+            color: #e67e22;
+            border-bottom: 1px solid #e67e22;
+        }
+
+        /* Responsive handling for smaller viewport screens */
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            .content-card { padding: 20px; }
+            .sections-table, .sections-table tbody, .sections-table tr, .sections-table td {
+                display: block;
+                width: 100% !important;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .sections-table td:last-child { margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-card">
+        <h1>Reference &amp; Resources Dashboard</h1>
+        
+        <!-- Table sections layout containing the 3 subsections -->
+        <table class="sections-table">
+            <tr>
+                <!-- Subsection 1: References -->
+                <td>
+                    <h2>Reference</h2>
+                    <ul class="link-list">
+                        <li><a href="https://nav.al/books" target="_blank" rel="noopener noreferrer">Naval Reading List</a></li>
+                        <li><a href="https://a16z.com/book-recommendations/" target="_blank" rel="noopener noreferrer">Marc Andreessen book reading list</a></li>
+                        <li><a href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html" target="_blank" rel="noopener noreferrer">Richard Hamming Framework</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Polg%C3%A1r#Education_experiment" target="_blank" rel="noopener noreferrer">Polgar Experiment</a></li>
+                        <li><a href="https://www.failory.com/graveyard" target="_blank" rel="noopener noreferrer">Startup graveyard</a></li>
+                        <li><a href="https://github.com/jacobhilton/deep-learning-curriculum" target="_blank" rel="noopener noreferrer">AI Reading List</a></li>
+                    </ul>
+                </td>
+
+                <!-- Subsection 2: Resources -->
+                <td>
+                    <h2>Resources</h2>
+                    <ul class="link-list">
+                        <li><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" rel="noopener noreferrer">Build your own x</a></li>
+                        <li><a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">AI from scratch</a></li>
+                        <li><a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">System design resources</a></li>
+                        <li><a href="https://github.com/eugeneyan/applied-ml" target="_blank" rel="noopener noreferrer">AI Engg Hub</a></li>
+                        <li><a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Sci-bot : Research papers</a></li>
+                    </ul>
+                </td>
+
+                <!-- Subsection 3: Films -->
+                <td>
+                    <h2>Films</h2>
+                    <ul class="link-list">
+                        <li><a href="https://mubi.com/en/lists/sriram-raghavan-s-favorite-films" target="_blank" rel="noopener noreferrer">30 Films Sriram Raghavan</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
