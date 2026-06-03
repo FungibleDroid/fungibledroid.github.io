@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reference & Resources</title>
     <style>
-        /* Base page background matching minimalist aesthetic */
+        /* Base page layout featuring your responsive nomad background image */
         body {
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-            background-color: #FFF5F5;
+            background-image: url('https://bydc.club/images/nomad-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #2c3e50;
             margin: 0;
             padding: 40px 20px;
@@ -19,15 +23,16 @@
             box-sizing: border-box;
         }
 
-        /* Centralized content block card */
+        /* Centralized content block card with subtle alpha transparency */
         .content-card {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.96);
             width: 100%;
             max-width: 950px;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid #f0d0d0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px); /* Enhances readability against detailed backgrounds */
         }
 
         /* Main Section Header styling */
