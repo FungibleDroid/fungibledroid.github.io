@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Play BYDC</title>
-	</head>
-	<body>
-		<a href="">  </a>
-        <h1>Game :</h1>        
-			<a href="/game/game.html">Play Game</a><br>
-			<a href="/game/primer.html">Game Primer</a><br>
-	</body>
-</html>	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play BYDC</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            background: #fff;
+            border: none;
+            border-collapse: collapse;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+        }
+
+        td {
+            padding: 12px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        a {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0066cc;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #003d80;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            a {
+                font-size: 1.3rem;
+                padding: 12px;
+            }
+
+            table {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<table>
+    <tr>
+        <td>
+            <h1>Game</h1>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/game/game.html">▶ Play Game</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/game/primer.html">📖 Game Primer</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
