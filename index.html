@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio</title>
+<meta name="description" content="Engineer by trade, nomad by design — two decades of enterprise software (EnterpriseOne / ERP) shipped across four continents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#EAF2F1;
+  --card:#FFFFFF;
+  --ink:#12343B;
+  --soft:#5D7A80;
+  --teal:#149A8C;
+  --amber:#FFB627;
+  --stamp:#E4572E;
+  --line:#C6D6D4;
+  --shadow:0 18px 40px -18px rgba(18,52,59,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  background:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(18,52,59,.10) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(18,52,59,.08) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 45% 85%, rgba(18,52,59,.09) 50%, transparent 51%),
+    var(--sky);
+  background-size:220px 220px, 260px 260px, 300px 300px, auto;
+  color:var(--ink);
+  font-family:"Outfit",system-ui,sans-serif;
+  font-size:17.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+::selection{background:var(--amber);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:var(--teal);text-decoration:none}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.75rem)}
+.mono{font-family:"JetBrains Mono",monospace}
+.disp{font-family:"Unbounded","Outfit",sans-serif}
+.tag{
+  font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--soft);
+}
+h1,h2{font-family:"Unbounded",sans-serif;font-weight:700;letter-spacing:-.01em;line-height:1.12}
+
+/* pill links */
+.pill{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:"JetBrains Mono",monospace;font-weight:600;font-size:.85rem;
+  color:var(--ink);background:var(--card);border:2px solid var(--ink);
+  border-radius:999px;padding:.55rem 1.15rem;
+  box-shadow:0 3px 0 var(--ink);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s;
+}
+.pill:hover{transform:translate(-1px,-2px);box-shadow:0 5px 0 var(--ink);background:var(--amber)}
+.pill:active{transform:translate(0,1px);box-shadow:0 1px 0 var(--ink)}
+.pill.solid{background:var(--ink);color:#fff}
+.pill.solid:hover{background:var(--teal);color:#fff}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--sky) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.nav img{height:30px;width:auto}
+.nav .links{display:flex;gap:.7rem}
+.nav .tag{white-space:nowrap}
+@media (max-width:720px){
+  .nav{gap:.6rem}
+  .nav .tag{display:none}
+  .nav img{height:22px;max-width:32vw;object-fit:contain;object-position:left}
+  .nav .links{gap:.45rem}
+  .nav .pill{padding:.42rem .7rem;font-size:.72rem}
+}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(3rem,8vh,5.5rem) 0 0;position:relative}
+.hero .kicker{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-bottom:1.6rem}
+.hero h1{
+  font-size:clamp(1.9rem,5.6vw,3.9rem);
+  max-width:17ch;margin-bottom:1.4rem;
+}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:.06em;height:.28em;
+  background:var(--amber);z-index:-1;border-radius:3px;opacity:.85;
+}
+.hero .sub{max-width:52ch;color:var(--soft);font-size:1.05rem;margin-bottom:1.8rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.chip{
+  font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.05em;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:.35rem .8rem;color:var(--ink);
+}
+.chip b{color:var(--teal);font-weight:600}
+
+/* flight map */
+.flightmap{margin-top:1.5rem;position:relative}
+.flightmap svg{width:100%;height:auto;display:block;overflow:visible}
+.citydot{fill:var(--ink)}
+.cityring{fill:none;stroke:var(--teal);stroke-width:2;opacity:.55;transform-origin:center;transform-box:fill-box;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.7}80%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+.citylabel{font-family:"Unbounded",sans-serif;font-weight:700;font-size:15px;fill:var(--ink)}
+.citycoord{font-family:"JetBrains Mono",monospace;font-size:10.5px;fill:var(--soft);letter-spacing:.06em}
+.route-base{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:2 9;stroke-linecap:round;opacity:.35}
+.route-live{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round}
+#plane{filter:drop-shadow(0 4px 6px rgba(18,52,59,.3))}
+@media (max-width:640px){
+  .citylabel{font-size:30px}
+  .citycoord{font-size:19px}
+  .citydot{r:9}
+  .cityring{r:18;stroke-width:4}
+  .route-base{stroke-width:4;stroke-dasharray:3 14}
+  .route-live{stroke-width:6}
+}
+
+/* ticker */
+.ticker{
+  margin-top:2.2rem;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  background:var(--amber);
+  overflow:hidden;white-space:nowrap;
+}
+.ticker .track{display:inline-flex;padding:.55rem 0;animation:tick 24s linear infinite;will-change:transform}
+.ticker span{
+  font-family:"JetBrains Mono",monospace;font-weight:600;font-size:.8rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);padding-right:2.2rem;
+}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:clamp(3.5rem,9vh,6rem) 0}
+.sec-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:.8rem 1.4rem;margin-bottom:2.4rem}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2.3rem)}
+.sec-head .tag{margin-left:auto}
+
+/* ---------- profile ---------- */
+.profile{display:grid;gap:2.8rem;align-items:start}
+@media (min-width:840px){.profile{grid-template-columns:minmax(250px,340px) 1fr;gap:4rem}}
+.polaroid{
+  background:#fff;padding:.8rem .8rem 2.6rem;border-radius:4px;
+  box-shadow:var(--shadow);position:relative;
+  transform:rotate(-2.5deg);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.polaroid:hover{transform:rotate(0deg) scale(1.015)}
+.polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.polaroid .cap{
+  position:absolute;left:0;right:0;bottom:.7rem;text-align:center;
+  font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--soft);letter-spacing:.08em;
+}
+.tape{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);
+  width:110px;height:26px;background:rgba(255,182,39,.55);
+  border-left:1px dashed rgba(18,52,59,.2);border-right:1px dashed rgba(18,52,59,.2);
+}
+.profile .copy p{max-width:56ch;margin-bottom:1.25rem}
+.profile .copy p:first-of-type{
+  font-family:"Unbounded",sans-serif;font-weight:500;font-size:clamp(1.02rem,1.9vw,1.25rem);
+  line-height:1.5;
+}
+.boardinfo{margin-top:2rem;display:grid;gap:.6rem}
+.boardinfo .row{display:flex;gap:1rem;align-items:baseline;font-family:"JetBrains Mono",monospace;font-size:.82rem}
+.boardinfo .row b{color:var(--soft);font-weight:600;min-width:9ch;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem}
+
+/* ---------- photo wall ---------- */
+.wall{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 1.1rem;
+  padding:1rem .4rem 1.4rem;
+}
+@media (min-width:620px){.wall{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:980px){.wall{grid-template-columns:repeat(4,1fr);gap:2rem 1.6rem}}
+.shot{
+  background:#fff;padding:.55rem .55rem 1.9rem;border-radius:3px;
+  box-shadow:0 10px 24px -12px rgba(18,52,59,.35);
+  position:relative;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, z-index 0s;
+}
+.shot img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;filter:saturate(.95)}
+.shot .n{
+  position:absolute;left:0;right:0;bottom:.45rem;text-align:center;
+  font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.14em;color:var(--soft);
+}
+.shot:nth-child(6n+1){transform:rotate(-2.4deg)}
+.shot:nth-child(6n+2){transform:rotate(1.8deg)}
+.shot:nth-child(6n+3){transform:rotate(-1.2deg)}
+.shot:nth-child(6n+4){transform:rotate(2.6deg)}
+.shot:nth-child(6n+5){transform:rotate(-3deg)}
+.shot:nth-child(6n+6){transform:rotate(1.2deg)}
+.shot:hover{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:var(--shadow);z-index:5}
+
+/* ---------- career ---------- */
+.stamps{display:flex;flex-wrap:wrap;gap:1.1rem;margin-bottom:3rem}
+.stampcard{
+  border:2.5px solid var(--stamp);color:var(--stamp);border-radius:10px;
+  padding:.8rem 1.1rem;min-width:200px;flex:1 1 200px;max-width:280px;
+  background:color-mix(in srgb, var(--stamp) 4%, transparent);
+  transform:rotate(-1.2deg);
+  -webkit-mask-image:radial-gradient(circle at 30% 60%, #000 92%, transparent 98%);
+}
+.stampcard:nth-child(2){transform:rotate(1.4deg)}
+.stampcard:nth-child(3){transform:rotate(-.8deg)}
+.stampcard:nth-child(4){transform:rotate(1.8deg);border-color:var(--teal);color:var(--teal);background:color-mix(in srgb, var(--teal) 5%, transparent)}
+.stampcard .yr{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.stampcard .what{font-weight:600;font-size:.95rem;margin-top:.2rem;line-height:1.35}
+.stampcard .what small{display:block;font-weight:400;font-size:.78rem;opacity:.8;margin-top:.15rem}
+
+.e1-note{max-width:60ch;margin-bottom:2.6rem;font-size:1.02rem}
+.e1-note a{font-weight:600;border-bottom:2px solid var(--amber)}
+
+/* boarding passes */
+.passes{display:grid;gap:1.4rem}
+@media (min-width:840px){.passes{grid-template-columns:1fr 1fr}}
+.pass{
+  background:var(--card);border-radius:14px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1fr 118px;overflow:hidden;position:relative;
+  border:1px solid var(--line);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.pass:hover{transform:translateY(-5px) rotate(-.4deg)}
+.pass .main{padding:1.15rem 1.25rem 1.05rem}
+.pass .main .tag{font-size:.62rem;margin-bottom:.45rem;display:block}
+.pass .co{font-family:"Unbounded",sans-serif;font-weight:700;font-size:1.12rem}
+.pass .co a{color:var(--ink)}
+.pass .co a:hover{color:var(--teal)}
+.pass .role{color:var(--soft);font-size:.92rem;margin-top:.15rem}
+.pass .barcode{
+  margin-top:.95rem;height:26px;border-radius:2px;
+  background:repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 5px, var(--ink) 5px 6px, transparent 6px 10px);
+  opacity:.85;
+}
+.pass .stub{
+  border-left:2px dashed var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;
+  background:color-mix(in srgb, var(--sky) 55%, #fff);
+  padding:.8rem .4rem;text-align:center;position:relative;
+}
+.pass .stub::before,.pass .stub::after{
+  content:"";position:absolute;left:-11px;width:20px;height:20px;border-radius:50%;
+  background:var(--sky);border:1px solid var(--line);
+}
+.pass .stub::before{top:-11px}
+.pass .stub::after{bottom:-11px}
+.pass .stub .code{font-family:"Unbounded",sans-serif;font-weight:700;font-size:1.35rem;color:var(--teal)}
+.pass .stub .city{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.pass.multi{grid-column:1 / -1;grid-template-columns:1fr}
+.pass.multi .legs{
+  display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.6rem;
+}
+.pass.multi .leg{
+  font-family:"JetBrains Mono",monospace;font-size:.74rem;
+  border:1px solid var(--line);border-radius:6px;padding:.3rem .6rem;background:var(--sky);
+}
+.pass.multi .leg b{color:var(--teal)}
+
+.gallery2{display:grid;gap:2rem;margin-top:3.2rem;align-items:center}
+@media (min-width:840px){.gallery2{grid-template-columns:1.5fr 1fr}}
+.logocard{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:var(--shadow)}
+.logocard img{width:100%}
+.logocard .tag{display:block;margin-top:.6rem}
+.guy img{max-width:300px;margin:0 auto;filter:drop-shadow(0 14px 24px rgba(18,52,59,.25))}
+.career-cta{margin-top:2.6rem}
+
+/* ---------- footer ---------- */
+footer{border-top:2px solid var(--ink);padding:3.2rem 0 4.5rem;background:color-mix(in srgb, var(--sky) 60%, #fff)}
+.foot{display:flex;flex-wrap:wrap;gap:1.4rem 2.5rem;align-items:center;justify-content:space-between}
+.bye{margin-top:2.6rem;text-align:center;font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.22em;color:var(--soft);text-transform:uppercase}
+
+/* motion prep */
+.js [data-reveal]{opacity:0}
+@media (prefers-reduced-motion:reduce){
+  .ticker .track{animation:none}
+  .cityring{animation:none}
+  .js [data-reveal]{opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="https://bydc.club" aria-label="Home"><img src="https://bydc.club/images/namelogo.png" alt="name logo"></a>
+    <span class="tag">// est. 1999 · currently roaming asia</span>
+    <nav class="links">
+      <a class="pill" href="https://bydc.club/reference.html">Knowledge →</a>
+      <a class="pill solid" href="https://bydc.club/resume.html">Resume →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">
+      <span class="tag" data-reveal>$ whoami → business apps engineer</span>
+      <span class="tag" data-reveal>base: wherever the work is</span>
+    </div>
+    <h1 data-reveal>Twenty years of enterprise code. <em>One backpack.</em></h1>
+    <p class="sub" data-reveal>ERP systems built, migrated and shipped across four continents — Hyderabad to Florida to Bangalore to Melbourne, and now somewhere in Asia.</p>
+    <div class="cta">
+      <a class="pill solid" href="https://bydc.club/resume.html" data-reveal>Resume →</a>
+      <a class="pill" href="https://bydc.club/reference.html" data-reveal>Knowledge →</a>
+      <a class="pill" href="mailto:harishnsw@gmail.com" data-reveal>harishnsw(gmail)</a>
+    </div>
+    <div class="chips">
+      <span class="chip" data-reveal><b>erp</b> · EnterpriseOne</span>
+      <span class="chip" data-reveal><b>20 yrs</b> · business software</span>
+      <span class="chip" data-reveal><b>4</b> · continents</span>
+      <span class="chip" data-reveal><b>now</b> · 2D game dev</span>
+    </div>
+
+    <div class="flightmap" data-reveal>
+      <svg viewBox="0 0 1000 300" role="img" aria-label="Flight route: Hyderabad, Florida, Bangalore, Melbourne, Asia">
+        <path id="routeBase" class="route-base" d="M60,210 Q170,80 280,200 Q390,290 500,190 Q610,70 720,205 Q830,285 940,185"/>
+        <path id="routeLive" class="route-live" d="M60,210 Q170,80 280,200 Q390,290 500,190 Q610,70 720,205 Q830,285 940,185" pathLength="1"/>
+        <!-- city nodes -->
+        <g>
+          <circle class="cityring" cx="60" cy="210" r="12"/><circle class="citydot" cx="60" cy="210" r="5"/>
+          <text class="citylabel" x="60" y="245" text-anchor="middle">HYD</text>
+          <text class="citycoord" x="60" y="262" text-anchor="middle">17.4°N 78.5°E</text>
+        </g>
+        <g>
+          <circle class="cityring" cx="280" cy="200" r="12" style="animation-delay:.5s"/><circle class="citydot" cx="280" cy="200" r="5"/>
+          <text class="citylabel" x="280" y="240" text-anchor="middle">FLA</text>
+          <text class="citycoord" x="280" y="257" text-anchor="middle">28.5°N 81.4°W</text>
+        </g>
+        <g>
+          <circle class="cityring" cx="500" cy="190" r="12" style="animation-delay:1s"/><circle class="citydot" cx="500" cy="190" r="5"/>
+          <text class="citylabel" x="500" y="230" text-anchor="middle">BLR</text>
+          <text class="citycoord" x="500" y="247" text-anchor="middle">12.9°N 77.6°E</text>
+        </g>
+        <g>
+          <circle class="cityring" cx="720" cy="205" r="12" style="animation-delay:1.5s"/><circle class="citydot" cx="720" cy="205" r="5"/>
+          <text class="citylabel" x="720" y="245" text-anchor="middle">MEL</text>
+          <text class="citycoord" x="720" y="262" text-anchor="middle">37.8°S 145.0°E</text>
+        </g>
+        <g>
+          <circle class="cityring" cx="940" cy="185" r="12" style="animation-delay:2s"/><circle class="citydot" cx="940" cy="185" r="5"/>
+          <text class="citylabel" x="940" y="225" text-anchor="middle">ASIA</text>
+          <text class="citycoord" x="940" y="242" text-anchor="middle">roaming…</text>
+        </g>
+        <!-- plane -->
+        <g id="plane">
+          <g transform="scale(1.5) rotate(90)">
+            <path d="M0,-9 L3,-2 L11,1 L3,3 L1,10 L-1,3 L-6,4 L-2,1 L-4,-2 Z" fill="#12343B"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>Hyderabad ✈ Florida ✈ Bangalore ✈ Melbourne ✈ Asia ✈ &nbsp;·&nbsp; git push --continent &nbsp;·&nbsp;</span
+      ><span>Hyderabad ✈ Florida ✈ Bangalore ✈ Melbourne ✈ Asia ✈ &nbsp;·&nbsp; git push --continent &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROFILE ═══════ -->
+<section id="profile">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>The passenger</h2>
+      <span class="tag">// profile.json</span>
+    </div>
+    <div class="profile">
+      <figure class="polaroid" data-reveal>
+        <span class="tape" aria-hidden="true"></span>
+        <img src="https://bydc.club/Suit.jpg" alt="Profile portrait" loading="lazy">
+        <figcaption class="cap">suit_mode = occasionally.jpg</figcaption>
+      </figure>
+      <div class="copy">
+        <p data-reveal>I have worked in enterprise software across consulting, logistics, manufacturing and business transformation projects.</p>
+        <p data-reveal>My core experience has been in ERP systems, especially EnterpriseOne, integrations, process improvement and operations.</p>
+        <p data-reveal>Experienced in migrating and porting master data from legacy systems into ERP using batch imports and SQL workflows. Skilled in data cleansing, validation, reconciliation and transformation.</p>
+        <div class="boardinfo">
+          <div class="row" data-reveal><b>education</b><span>B.E (CS) — University of Madras</span></div>
+          <div class="row" data-reveal><b>route</b><span>Hyderabad → Florida → Bangalore → Melbourne → Asia</span></div>
+          <div class="row" data-reveal><b>contact</b><span><a href="mailto:harishnsw@gmail.com">harishnsw(gmail)</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHOTO WALL ═══════ -->
+<section id="wall">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>Souvenirs</h2>
+      <span class="tag">// 24 shots · places &amp; people along the way</span>
+    </div>
+    <div class="wall" id="photowall"><!-- shots injected --></div>
+  </div>
+</section>
+
+<!-- ═══════ CAREER ═══════ -->
+<section id="career">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>Passport, please</h2>
+      <span class="tag">// career log</span>
+    </div>
+
+    <div class="stamps">
+      <div class="stampcard" data-reveal>
+        <div class="yr">Origin</div>
+        <div class="what">B.E (CS) — University of Madras</div>
+      </div>
+      <div class="stampcard" data-reveal>
+        <div class="yr">1999 – 2019</div>
+        <div class="what">Various roles in business software systems</div>
+      </div>
+      <div class="stampcard" data-reveal>
+        <div class="yr">2019 – 2024</div>
+        <div class="what">Trading &amp; Investing in Stocks and Crypto</div>
+      </div>
+      <div class="stampcard" data-reveal>
+        <div class="yr">2026 · current</div>
+        <div class="what">2D Game Design &amp; Development <small>Claude Code &amp; Godot Engine</small></div>
+      </div>
+    </div>
+
+    <p class="e1-note" data-reveal>
+      Enterprise business applications, mainly
+      <a href="https://www.oracle.com/in/applications/jd-edwards-enterpriseone/">EnterpriseOne — Oracle</a>.
+    </p>
+
+    <div class="passes">
+      <div class="pass" data-reveal>
+        <div class="main">
+          <span class="tag">boarding pass · developer</span>
+          <div class="co"><a href="https://www.rfsmart.com/">ICS</a></div>
+          <div class="role">Developer</div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+        <div class="stub"><span class="code">FLA</span><span class="city">Florida</span></div>
+      </div>
+      <div class="pass" data-reveal>
+        <div class="main">
+          <span class="tag">boarding pass · principal</span>
+          <div class="co"><a href="https://www.oracle.com/">Oracle</a></div>
+          <div class="role">Principal Tech Analyst</div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+        <div class="stub"><span class="code">BLR</span><span class="city">Bangalore</span></div>
+      </div>
+      <div class="pass" data-reveal>
+        <div class="main">
+          <span class="tag">boarding pass · consultant</span>
+          <div class="co"><a href="https://nufarm.com/">Nufarm</a></div>
+          <div class="role">E1 Consultant</div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+        <div class="stub"><span class="code">MEL</span><span class="city">Melbourne</span></div>
+      </div>
+      <div class="pass" data-reveal>
+        <div class="main">
+          <span class="tag">boarding pass · analyst</span>
+          <div class="co"><a href="https://www.rinnai.us/">Rinnai</a></div>
+          <div class="role">Supply Chain Analyst</div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+        <div class="stub"><span class="code">MEL</span><span class="city">Melbourne</span></div>
+      </div>
+      <div class="pass multi" data-reveal>
+        <div class="main">
+          <span class="tag">multi-city pass · contract positions</span>
+          <div class="legs">
+            <span class="leg">Netapp <b>· San Jose</b></span>
+            <span class="leg">GE Health <b>· Milwaukee</b></span>
+            <span class="leg">DK Publishing <b>· Nashville</b></span>
+            <span class="leg">Mannatech <b>· Dallas</b></span>
+            <span class="leg">AACO <b>· Brisbane</b></span>
+          </div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery2">
+      <figure class="logocard" data-reveal>
+        <img src="https://bydc.club/images/logo.jpg" alt="Company logos" loading="lazy">
+        <figcaption class="tag">// carriers flown with</figcaption>
+      </figure>
+      <figure class="guy" data-reveal>
+        <img src="https://bydc.club/images/laptopGuy.png" alt="Laptop guy illustration" loading="lazy">
+      </figure>
+    </div>
+
+    <p class="career-cta" data-reveal>
+      <a class="pill solid" href="https://bydc.club/resume.html">Full itinerary — Resume →</a>
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="pill" href="mailto:harishnsw@gmail.com">harishnsw(gmail)</a>
+      <span class="tag">Hyderabad → Florida → Bangalore → Melbourne → Asia</span>
+      <span style="display:flex;gap:.7rem">
+        <a class="pill" href="https://bydc.club/reference.html">Knowledge →</a>
+        <a class="pill solid" href="https://bydc.club/resume.html">Resume →</a>
+      </span>
+    </div>
+    <p class="bye">✈ see you somewhere</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script>
+// Build the 24-shot souvenir wall
+(function(){
+  var wall = document.getElementById('photowall');
+  var html = '';
+  for (var i=1;i<=24;i++){
+    var n = (i<10?'0':'')+i;
+    html += '<figure class="shot" data-shot>'+
+            '<img src="https://bydc.club/grid/'+i+'.jpg" alt="Souvenir photo '+n+'" loading="lazy">'+
+            '<figcaption class="n">№ '+n+'</figcaption></figure>';
+  }
+  wall.innerHTML = html;
+})();
+
+// Motion — page fully readable without JS/GSAP
+(function(){
+  if (!window.gsap) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+  // ── Flight loop: plane + live trail, always on (even reduced-motion gets a static plane at start) ──
+  var live = document.getElementById('routeLive');
+  gsap.set(live,{strokeDasharray:1,strokeDashoffset:1});
+  gsap.set('#plane',{transformOrigin:'50% 50%'});
+  if (reduce){
+    gsap.set('#plane',{motionPath:{path:'#routeBase',align:'#routeBase',alignOrigin:[.5,.5],start:1,end:1,autoRotate:true}});
+    gsap.set(live,{strokeDashoffset:0});
+    return; // no other animation
+  }
+
+  document.documentElement.classList.add('js');
+
+  var flight = gsap.timeline({repeat:-1, repeatDelay:1.2});
+  flight.to('#plane',{
+      duration:7,ease:'power1.inOut',
+      motionPath:{path:'#routeBase',align:'#routeBase',alignOrigin:[.5,.5],autoRotate:true}
+    },0)
+    .to(live,{strokeDashoffset:0,duration:7,ease:'power1.inOut'},0)
+    .to(live,{opacity:0,duration:.8},7.2)
+    .set(live,{strokeDashoffset:1,opacity:1});
+
+  // ── Hero load sequence ──
+  var heroItems = document.querySelectorAll('.hero [data-reveal]');
+  gsap.fromTo(heroItems,
+    {y:26,opacity:0},
+    {y:0,opacity:1,duration:.8,stagger:.08,ease:'power3.out',delay:.1});
+
+  // ── Scroll reveals ──
+  gsap.utils.toArray('section:not(.hero) [data-reveal]').forEach(function(el){
+    gsap.fromTo(el,{y:30,opacity:0},
+      {y:0,opacity:1,duration:.75,ease:'power3.out',
+       scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+
+  // ── Souvenir wall: scattered pop-in (respect CSS rotations) ──
+  gsap.set('[data-shot]',{opacity:0,y:36,scale:.92});
+  ScrollTrigger.batch('[data-shot]',{
+    start:'top 92%',
+    onEnter:function(batch){
+      gsap.to(batch,{opacity:1,y:0,scale:1,duration:.65,stagger:{each:.06,from:'random'},ease:'back.out(1.6)',overwrite:true});
+    }
+  });
+
+  // ── Passport stamps: thunk in ──
+  gsap.utils.toArray('.stampcard').forEach(function(st,i){
+    gsap.from(st,{scale:1.7,opacity:0,rotate:(i%2? -14:12),duration:.5,ease:'power4.in',
+      scrollTrigger:{trigger:st,start:'top 87%'}});
+  });
+})();
+</script>
+</body>
+</html>
