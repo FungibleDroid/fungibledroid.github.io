@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to become a Robotics Engineer in 6 months — by DeRonin_</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fcfcfa;--fg:#111;--muted:#6b6b6b;--border:#e8e5de;--card:#ffffff;--accent:#111;
+  --code-bg:#f3f2ef;--yellow:#ffef5c;--link:#111;--pill:#f1efe9;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#0f0f0e;--fg:#efede8;--muted:#9a9890;--border:#22211f;--card:#181815;--code-bg:#1e1d1a;--pill:#1e1d1a;--link:#efede8}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:3px}
+a:hover{opacity:0.8}
+code, .mono{font-family:JetBrains Mono,monospace}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:48px;padding:32px 24px 120px}
+@media(max-width:960px){.wrap{grid-template-columns:1fr}.toc{position:relative!important;top:0!important;display:none}.toc.mobile{display:block}}
+.toc{position:sticky;top:24px;align-self:start;height:calc(100vh - 48px);overflow:auto;padding-right:8px}
+.toc h4{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px}
+.toc a{display:block;font-size:13px;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--muted);line-height:1.4}
+.toc a.active,.toc a:hover{background:var(--pill);color:var(--fg)}
+.toc .progress{height:2px;background:var(--border);border-radius:999px;margin:12px 0;overflow:hidden}
+.toc .bar{height:100%;width:0;background:var(--fg);transition:width 0.1s}
+.hero{border:1px solid var(--border);border-radius:24px;background:var(--card);padding:40px 36px;overflow:hidden;position:relative}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;background:radial-gradient(circle at center,var(--yellow),transparent 70%);opacity:0.6;pointer-events:none}
+.eyebrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.pill{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;background:var(--pill);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-family:JetBrains Mono,monospace;color:var(--muted)}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:0.95;letter-spacing:-0.04em;font-weight:800;max-width:720px}
+.hero h1 span{background:var(--yellow);color:#111;padding:0 8px;border-radius:6px;box-decoration-break:clone}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin-top:18px;line-height:1.5}
+.stats{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+.stat{border-top:1px solid var(--border);padding-top:12px;min-width:120px}
+.stat b{font-size:22px;display:block;line-height:1}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-family:JetBrains Mono,monospace}
+.content{margin-top:36px}
+.section{border:1px solid var(--border);border-radius:20px;background:var(--card);padding:32px 28px;margin-bottom:20px}
+@media(max-width:600px){.section{padding:24px 18px}.hero{padding:28px 20px}}
+.section h2{font-size:28px;letter-spacing:-0.03em;line-height:1.1;margin-bottom:12px}
+.section h3{font-size:18px;margin:28px 0 12px;letter-spacing:-0.01em}
+.section h4{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px;font-family:JetBrains Mono,monospace}
+.section p{margin:12px 0;font-size:16px}
+.section ul, .section ol{margin:12px 0 12px 20px;font-size:15px}
+.section li{margin:6px 0}
+.callout{background:var(--code-bg);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:14px}
+.callout.important{border-left:4px solid #111;background: #fff9c4}
+@media(prefers-color-scheme:dark){.callout.important{background:#221f00;border-left-color:var(--yellow);color:#efede8}}
+.task{background:var(--fg);color:var(--bg);border-radius:14px;padding:18px 20px;margin:20px 0}
+.task b{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7;display:block;margin-bottom:8px}
+.task p{color:inherit;font-size:14.5px;margin:0}
+.divider{height:1px;background:var(--border);margin:32px 0}
+.resources{display:grid;gap:10px}
+.res{border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:start;background:var(--bg)}
+.res .n{font-family:JetBrains Mono,monospace;font-size:11px;background:var(--pill);border:1px solid var(--border);min-width:28px;height:28px;display:grid;place-items:center;border-radius:8px;color:var(--muted)}
+.res a{font-weight:600;font-size:14px;word-break:break-all}
+.res p{font-size:13px;color:var(--muted);margin:4px 0 0;line-height:1.4}
+.milestone{border:1px dashed var(--border);border-radius:14px;padding:18px 20px;margin-top:20px}
+.milestone b{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-family:JetBrains Mono,monospace}
+.price-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.price-table th{font-family:JetBrains Mono,monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);text-align:left;padding:10px;border-bottom:1px solid var(--border)}
+.price-table td{padding:10px;border-bottom:1px solid var(--border)}
+.price-table tr:last-child td{border-bottom:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+.btn.youtube{background:#ff0000;color:#fff}
+hr.sep{border:none;height:1px;background:var(--border);margin:40px 0}
+.footer{margin-top:48px;padding:24px;border:1px solid var(--border);border-radius:20px;background:var(--card);text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside class="toc" id="toc">
+    <div style="font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">DeRonin_ Roadmap</div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <h4>Intro</h4>
+    <a href="#why">Why robotics and not AI engineering</a>
+    <a href="#what">What a robotics engineer actually does</a>
+    <h4>Roadmap</h4>
+    <a href="#m1">Month 1: Electronics, bench & tools</a>
+    <a href="#m2">Month 2: Microcontrollers, motors & sensors</a>
+    <a href="#m3">Month 3: CAD & manufacturing</a>
+    <a href="#m4">Month 4: ROS 2, simulation & Nav2</a>
+    <a href="#m5">Month 5: Maths — control, kinematics, perception</a>
+    <a href="#m6">Month 6: Robot learning & becoming hireable</a>
+    <h4>Closing</h4>
+    <a href="#conclusion">Conclusion & Market reality</a>
+    <a href="#pay">What it pays</a>
+    <div style="margin-top:20px">
+      <a class="btn youtube" href="https://www.youtube.com/@deronin_23" target="_blank">▶ YouTube @deronin_23</a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <div class="eyebrow">
+        <div class="pill">X Thread • @DeRonin_ • Sep 2026</div>
+        <div class="pill">~12,000 words • 100+ resources • 27 projects</div>
+        <div class="pill">Zero to robotics engineer</div>
+      </div>
+      <h1>How to become a <span>Robotics Engineer in 6 months</span></h1>
+      <p class="lead">Robotics is the least crowded high-value skill in tech right now. This guide is a practical, hardware-first roadmap from zero electronics to a deployable robot-learning portfolio. Every section has resources, a focus list, and a practical task that leaves you with something real.</p>
+      <div class="stats">
+        <div class="stat"><b>6 months</b><span>2-3h / day</span></div>
+        <div class="stat"><b>27 builds</b><span>practical tasks</span></div>
+        <div class="stat"><b>100+ links</b><span>verified Sep 2026</span></div>
+        <div class="stat"><b>3 tiers</b><span>budget • mid • pro</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="section" id="intro">
+        <p>Robotics is the least crowded high-value skill in tech right now. The problem is that almost nobody knows where to start, because the field looks like five fields stacked on top of each other.</p>
+        <ul>
+          <li>Some people start with a university robotics textbook and quit at the chapter on rotation matrices</li>
+          <li>Some buy an Arduino kit, blink an LED, and never build the second thing</li>
+          <li>Some jump straight into ROS 2 tutorials without knowing what a PWM signal is, then wonder why nothing works on real hardware</li>
+          <li>Others go the opposite way and learn only machine learning, which means they can train a policy but cannot make a motor turn</li>
+        </ul>
+        <p>The result is usually the same: months of scattered effort and no working robot to show anyone.</p>
+        <p>If your goal is to become a robotics engineer, you do not need a mechanical engineering degree and you do not need to derive the dynamics of a seven-link arm by hand. You need to be able to make physical things do what you tell them to, reliably, and then prove it.</p>
+        <p><b>That means learning how to:</b></p>
+        <ul>
+          <li>read a schematic, wire a circuit, and debug it with a multimeter</li>
+          <li>program a microcontroller to drive motors and read sensors in real time</li>
+          <li>design and manufacture your own mechanical parts</li>
+          <li>build robots the way companies build them, in ROS 2, with simulation</li>
+          <li>close a control loop and know why it oscillates when it does</li>
+          <li>teach a robot a task from demonstrations instead of hand-coding it</li>
+          <li>ship a portfolio that survives three follow-up questions in an interview</li>
+        </ul>
+        <div class="callout">Every single section has resources, a focus list, and a practical task that leaves you with something real, because a robotics portfolio is made of things that moved, not courses you finished. It also has hardware costs and where to order from, at three budget tiers, so you can follow this whether you are in San Francisco or somewhere AliExpress takes six weeks to reach.</div>
+        <div class="callout important"><b>Important!!!</b> While writing this article, I realized the most important skill is being able to explain hard technical things in simple words. So I created my personal YouTube channel where I am going to record videos about AI & Robotics engineering.<br><br><a class="btn youtube" href="https://www.youtube.com/@deronin_23" target="_blank">Follow: youtube.com/@deronin_23 — It would mean a lot ❤</a></div>
+      </div>
+
+      <div class="section" id="why">
+        <h2>Why robotics and not AI engineering</h2>
+        <p>Everyone in your timeline is an AI engineer now, and that is the whole problem. You cannot build a moat out of what a subagent does at 3am for pennies. Robotics is the opposite, for reasons that are structural rather than fashionable:</p>
+        <ul>
+          <li>the models already work, what is missing is someone who can put them in a body</li>
+          <li>you cannot scrape the physical world, someone has to move a real machine to create the data</li>
+          <li>there is no Stack Overflow answer for why your gripper keeps slipping</li>
+          <li>a robot falling over is not a problem you can hand to a subagent</li>
+          <li>nobody clones your robot over a weekend</li>
+        </ul>
+        <p><b>AI engineering is crowded and robotics is empty.</b></p>
+      </div>
+
+      <div class="section" id="what">
+        <h2>What a robotics engineer actually does</h2>
+        <p>A lot of people hear "robotics engineer" and imagine someone designing a humanoid from scratch. In reality the job splits into specialisms, and you pick one and stay literate in the rest:</p>
+        <ul>
+          <li>perception and computer vision</li>
+          <li>controls and state estimation</li>
+          <li>motion planning and manipulation</li>
+          <li>robot learning</li>
+          <li>embedded and firmware</li>
+          <li>simulation</li>
+          <li>systems and integration</li>
+          <li>deployment and operations</li>
+        </ul>
+        <p>I read live job listings from Figure and Skild, and the same four requirements appear in every single one:</p>
+        <ol>
+          <li>C++ and Python, both, not one or the other</li>
+          <li>experience on real hardware, since simulation-only does not qualify you as senior</li>
+          <li>depth in one specialism and literacy across the rest</li>
+          <li>debugging named as a skill in its own right</li>
+        </ol>
+        <div class="callout">Notice what is not on that list: a specific degree. That is why this roadmap is built around making things work rather than studying theory, and why every section below ends with something you have to build. Keep whatever is paying you while you do it, treat this as two or three hours a day.</div>
+      </div>
+
+      <!-- MONTH 1 -->
+      <div class="section" id="m1">
+        <div class="eyebrow"><div class="pill">Month 1</div></div>
+        <h2>Electronics, the bench, and the tools you build everything with</h2>
+        <p><b>Goal:</b> be able to read a schematic, build a circuit that works, and find the fault when it does not.</p>
+        <p>Almost every roadmap skips this and starts at Arduino, which is why so many people can copy a wiring diagram but cannot fix anything when it breaks. Robotics is the one software field where the bug is sometimes a loose wire, a sagging battery or a motor drawing more current than your regulator can supply.</p>
+        
+        <h3>1. Electronics fundamentals</h3>
+        <p>You need Ohm's law, voltage dividers, what a capacitor does, how a transistor switches, and how to read a schematic. You do not need to design an op-amp from first principles.</p>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://www.falstad.com/circuit/" target="_blank">Falstad Circuit Simulator</a><p>Free, in-browser. Animated electron flow and live voltage colouring — fastest way to build intuition.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://www.tinkercad.com/circuits" target="_blank">Tinkercad Circuits</a><p>Virtual breadboard + Arduino + multimeter together, catches wiring mistakes before you own parts.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://www.allaboutcircuits.com/textbook/" target="_blank">All About Circuits — Lessons in Electric Circuits</a><p>Complete open-licensed EE textbook in six volumes. Reference when a video hand-waves.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://afrotechmods.com/tutorials/" target="_blank">Afrotechmods Tutorials</a><p>Short, fast, funny videos sorted into beginner/intermediate/advanced.</p></div></div>
+          <div class="res"><div class="n">5</div><div><a href="https://www.makershed.com/products/make-electronics-3rd-edition-print" target="_blank">Make: Electronics, 3rd ed — Charles Platt ($29.99)</a><p>Best single paper book for someone who has never held a multimeter.</p></div></div>
+        </div>
+        <h4>What to focus on</h4>
+        <ul>
+          <li>Ohm's law and voltage dividers until automatic</li>
+          <li>Current draw — why motor stalling browns out your MCU</li>
+          <li>Reading schematics: resistor, capacitor, diode, transistor, ground, Vcc</li>
+          <li>Pull-up/pull-down resistors</li>
+          <li>Decoupling capacitors — why every IC needs one</li>
+          <li>Battery basics: LiPo cell counts, C ratings, never leave charging unattended</li>
+        </ul>
+        <div class="task"><b>Practice Task</b><p>Build a voltage divider in Falstad, calculate output by hand, confirm in sim. Then build a transistor switch that turns an LED on from logic-level input — that exact circuit will later let a 3.3V pin control something needing more current.</p></div>
+
+        <h3>2. The bench, tools & honest budget</h3>
+        <table class="price-table">
+          <tr><th>Tier</th><th>Cost</th><th>What you get</th></tr>
+          <tr><td>Tier 0</td><td>$0</td><td>Falstad, Tinkercad, All About Circuits. Learn Ohm's law before spending.</td></tr>
+          <tr><td>Tier 1</td><td>~$45-60</td><td>Starter kit + multimeter, solderless</td></tr>
+          <tr><td>Tier 2</td><td>~$110-160</td><td>+ soldering iron, solder, cutters, strippers, helping hands, perfboard</td></tr>
+          <tr><td>Tier 3</td><td>~$200-300</td><td>+ bench PSU, better meter, desoldering pump, storage, chassis kit</td></tr>
+        </table>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://www.elegoo.com/products/elegoo-uno-r3-super-starter-kit" target="_blank">Elegoo UNO R3 Super Starter Kit ($42.99)</a><p>Best value pick, most beginner courses target it.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://www.elegoo.com/products/elegoo-uno-basic-starter-kit" target="_blank">Elegoo UNO Basic Starter Kit ($19.99)</a><p>Cheapest real entry if money is tight.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://www.sparkfun.com/sparkfun-inventor-s-kit-v4-1-2.html" target="_blank">SparkFun Inventor's Kit v4.1.2 ($99.95)</a><p>Best curriculum — 16 circuits across 5 projects ending in a working robot.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://www.adafruit.com/product/2034" target="_blank">Adafruit DMM 9205B+ ($17.50)</a><p>Volts, current to 20A, continuity, resistance, capacitance — everything you need for years.</p></div></div>
+          <div class="res"><div class="n">5</div><div><a href="https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/" target="_blank">Pinecil V2 ($25.99 community, $35.99 retail)</a><p>Real temp-controlled iron, USB-C powered, takes TS100 / Hakko T12 tips.</p></div></div>
+        </div>
+        <h4>Where to order</h4>
+        <p>AliExpress cheapest (3-10x less) but 2-6 weeks, no support. Amazon mid-priced and fast — right for first kit. Adafruit/SparkFun cost more but every page links a full tutorial and support is real. Pololu best for motors/drivers. DigiKey/Mouser for exact parts by spec.</p>
+        <div class="task"><b>Practice Task</b><p>Buy kit + multimeter. Measure battery voltage, resistance of 5 random resistors vs colour bands, then use continuity mode to find a deliberately broken wire you make yourself.</p></div>
+
+        <h3>3. Soldering</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering" target="_blank">Adafruit Guide to Excellent Soldering</a><p>Iron selection, technique, photos of every failure, safety.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter" target="_blank">SparkFun: How to Use a Multimeter</a><p>Including what to do when you blow the fuse — you will.</p></div></div>
+        </div>
+        <div class="task"><b>Practice Task</b><p>Solder header pins onto a cheap breakout board, test every pin with continuity, repeat 3 times. Desolder one and resolder it — removing components badly is how most beginners destroy boards.</p></div>
+
+        <h3>4. Python, terminal & Git</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://cs50.harvard.edu/python/" target="_blank">CS50P: Intro to Programming with Python (Harvard)</a><p>Rigorous, problem sets + final project, structure makes people finish.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://www.coursera.org/specializations/python" target="_blank">Python for Everybody (Coursera)</a><p>Gentlest starting point if CS50P feels steep.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://missing.csail.mit.edu/" target="_blank">The Missing Semester of Your CS Education (MIT)</a><p>Shell, scripting, command-line fluency robotics runs on.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a><p>Best visual tool for branches/merges.</p></div></div>
+        </div>
+        <div class="milestone"><b>Month 1 Milestone — you should be able to:</b><br><br>
+          • Read a schematic and build it on breadboard<br>
+          • Calculate if resistor value is right before plugging<br>
+          • Find short/break/dead component with multimeter<br>
+          • Solder clean through-hole joint and check it<br>
+          • Write Python, run from terminal, push to GitHub<br>
+          • Explain why motor stalling can reset your MCU
+        </div>
+      </div>
+
+      <!-- MONTH 2 -->
+      <div class="section" id="m2">
+        <div class="eyebrow"><div class="pill">Month 2</div></div>
+        <h2>Microcontrollers, motors and sensors, and your first moving robot</h2>
+        <p><b>Goal:</b> Build a robot that moves, senses, and corrects itself. Line-following robot is a closed control loop with sensor input, actuator output and tuning problem — exactly what a humanoid is, only smaller.</p>
+        
+        <h3>1. Arduino</h3>
+        <p>Start on Arduino rather than ESP32 — ecosystem is enormous and every tutorial targets it. You will move to ESP32 within weeks, nothing wasted.</p>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://toptechboy.com/arduino-lessons/" target="_blank">Paul McWhorter — Arduino Lessons</a><p>100+ lessons, homework each — best fit if you failed at Arduino before.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://docs.arduino.cc/built-in-examples/" target="_blank">Arduino Built-in Examples</a><p>Runnable sketches inside IDE — fastest to “something moved”.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://docs.arduino.cc/learn/" target="_blank">Arduino Official Docs — Learn</a><p>Authoritative reference for digital/analog IO, PWM, I2C, SPI, UART.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://projecthub.arduino.cc/" target="_blank">Arduino Project Hub</a><p>6,000+ projects with wiring and code.</p></div></div>
+        </div>
+        <div class="task"><b>Practice Task</b><p>Reaction-timer game: LED fires after random delay, button stops clock, time prints to serial. Uses interrupts, debouncing, non-blocking timing with millis() — demonstrable in 15s video.</p></div>
+
+        <h3>2. ESP32</h3>
+        <p>Where you go the moment you want WiFi, Bluetooth, more power or two cores. Buy ESP32-S3 as main, plus one classic ESP32 so older tutorial code runs unmodified.</p>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://randomnerdtutorials.com/getting-started-with-esp32/" target="_blank">Random Nerd Tutorials — Getting Started with ESP32</a><p>Highest-signal free library, 250+ project index.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html" target="_blank">ESP-IDF Programming Guide</a><p>Only source of truth once you outgrow Arduino layer.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/" target="_blank">Arduino ESP32 Core docs</a><p>Bridge that makes Arduino vs ESP-IDF a spectrum.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://dronebotworkshop.com/esp32-2/" target="_blank">DroneBot Workshop ESP32 hub</a><p>Long-form, wiring-diagram-heavy, ESP-NOW, OTA, low-power.</p></div></div>
+        </div>
+        <table class="price-table"><tr><th>Board</th><th>Price</th><th>Link</th></tr>
+          <tr><td>ESP32-S3-DevKitC-1 8MB</td><td>$15.95</td><td><a href="https://www.adafruit.com/product/5312">Adafruit</a></td></tr>
+          <tr><td>Classic ESP32 Dev</td><td>$15.00</td><td><a href="https://www.adafruit.com/product/3269">Adafruit</a></td></tr>
+          <tr><td>Seeed XIAO ESP32-C3</td><td>$4.99</td><td><a href="https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html">Seeed</a></td></tr>
+        </table>
+        <div class="task"><b>Practice Task</b><p>Serve a web page from ESP32 showing live sensor readings + buttons that drive a servo, accessible from phone on same network. Teaches WiFi, HTTP, async work.</p></div>
+
+        <h3>3. Motors, drivers & actuation</h3>
+        <p>Four types matter: Brushed DC gearmotor (cheap, needs H-bridge), Hobby servo (180° internal loop), Smart serial bus servo (daisy-chained, position/velocity/current feedback), Stepper (open-loop absolute positioning).</p>
+        <div class="callout"><b>Memorize:</b> The L298N is in every tutorial and you should not use it. Obsolete bipolar H-bridge that drops ~2V, gets hot, wastes battery. Learn it because tutorials use it, then switch to TB6612FNG or DRV8833.</div>
+        <table class="price-table"><tr><th>Driver</th><th>Price</th><th>Use</th></tr>
+          <tr><td>Adafruit DRV8833</td><td>$5.95</td><td>Cheapest good driver</td></tr>
+          <tr><td>SparkFun TB6612FNG</td><td>$14.77</td><td>Correct default replacement for L298N</td></tr>
+          <tr><td>Pololu gearmotor w/ encoder</td><td>$19.95</td><td>Encoder wiring solved</td></tr>
+          <tr><td>FeeTech STS3215 smart servo</td><td>$31.71</td><td>Used in SO-101 arm</td></tr>
+        </table>
+        <div class="task"><b>Practice Task</b><p>Drive one DC motor forward/backward at 5 speeds via PWM, add encoder, write function that turns wheel exactly one full revolution regardless of battery voltage — your first real closed loop.</p></div>
+
+        <h3>4. Sensors & 5. First robots</h3>
+        <table class="price-table"><tr><th>Sensor</th><th>Price</th><th>Notes</th></tr>
+          <tr><td>HC-SR04 ultrasonic</td><td>$3.95</td><td>Wide cone, poor on soft surfaces</td></tr>
+          <tr><td>VL53L0X ToF laser</td><td>$14.95</td><td>Narrow 35° cone</td></tr>
+          <tr><td>MPU-6050 IMU</td><td>$12.95</td><td>Cheap classic, you do fusion</td></tr>
+          <tr><td>BNO085 9-DoF</td><td>$29.50</td><td>Fusion on-chip, quaternion out</td></tr>
+          <tr><td>RPLIDAR C1 lidar</td><td>$69.00</td><td>360° lidar</td></tr>
+        </table>
+        <div class="callout"><b>Beginner tip:</b> For balancing robot, write complementary filter first: <span class="mono">angle = a*(angle+gyro*dt)+(1-a)*accelAngle</span> with a~0.98. Works in 4 lines. Graduate to Kalman when you understand why it fails.</div>
+        <p><b>Line-follower:</b> Quality ~$105, Budget ~$38. <b>Balancing robot:</b> Quality ~$134, Budget ~$62. BOM details in original thread — ESP32-S3 + Romi chassis + TB6612FNG + QTR-8RC array.</p>
+        <div class="milestone"><b>Month 2 Milestone:</b><br><br>• Drive motor at controlled speed, know PWM duty vs actual RPM<br>• Read encoder and close position loop<br>• Wire I2C sensor from datasheet without tutorial<br>• Fuse accel + gyro into stable angle<br>• Explain P/I/D by describing what robot did<br>• Two working robots on GitHub with wiring + code + failure notes</div>
+      </div>
+
+      <!-- MONTH 3 -->
+      <div class="section" id="m3">
+        <div class="eyebrow"><div class="pill">Month 3</div></div>
+        <h2>Mechanical design, CAD and manufacturing your own parts</h2>
+        <p><b>Goal:</b> Design a part in CAD, manufacture it, and have it fit. This separates people who assemble kits from people who build robots.</p>
+        <h3>CAD — pick one and go deep</h3>
+        <ul>
+          <li><b>Onshape Free:</b> Browser, works on Chromebook, assembly/mate behaves like robot joints. Catch: docs are public</li>
+          <li><b>Fusion Personal:</b> Free 3-year term non-commercial, CAM + print integration</li>
+          <li><b>FreeCAD 1.1 (Mar 2026):</b> Genuinely usable now, no cloud/payment</li>
+          <li><b>SOLIDWORKS for Makers:</b> $48/year, watermarked files</li>
+        </ul>
+        <h3>3D Printing — verified Sep 2026</h3>
+        <table class="price-table"><tr><th>Printer</th><th>Price</th></tr>
+          <tr><td>Creality Ender-3 V3 SE</td><td>$199</td></tr>
+          <tr><td>Bambu Lab A1 mini</td><td>$219.99</td></tr>
+          <tr><td>Bambu Lab A1 256mm</td><td>$299.99</td></tr>
+          <tr><td>Creality K1C enclosed</td><td>$369</td></tr>
+          <tr><td>Bambu Lab P1S enclosed CoreXY</td><td>$799</td></tr>
+        </table>
+        <p><b>Filaments:</b> PLA/PLA+ prototypes (stiff, creeps, softens 55-60°C), PETG default real part (tough), ABS/ASA hot/outdoor (needs enclosure), Nylon gears, CF filled stiff links (hardened nozzle), TPU feet/bumpers/gripper fingers.</p>
+        <h3>Build a real arm — SO-101</h3>
+        <p>Open-source 5-DOF arm + gripper from TheRobotStudio + Hugging Face, leader + follower pair for teleop and demonstration recording. Official BOM: $229.88 pair, $121.94 single follower excl. printing.</p>
+        <div class="resources">
+          <div class="res"><div class="n">★</div><div><a href="https://github.com/TheRobotStudio/SO-ARM100" target="_blank">SO-ARM100 GitHub — official repo</a><p>The platform for months 5-6</p></div></div>
+          <div class="res"><div class="n">$</div><div><a href="https://www.seeedstudio.com/SO-ARM101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html" target="_blank">Seeed Studio SO-ARM101 Pro servo kit $277.99</a></div></div>
+          <div class="res"><div class="n">$</div><div><a href="https://www.robotshop.com/products/feetech-12v-30kgcm-magnetic-encoding-servo-sts3215" target="_blank">Cheaper: EEZYbotARM MK2 $50-80 free STLs + MG996R</a></div></div>
+        </div>
+        <div class="milestone"><b>Month 3 Milestone:</b> Model part from datasheet, state printer clearance from measurement, design for FDM orientation, choose material with justification, explain backlash, show working arm you assembled/modified.</div>
+      </div>
+
+      <!-- MONTH 4 -->
+      <div class="section" id="m4">
+        <div class="eyebrow"><div class="pill">Month 4</div></div>
+        <h2>ROS 2, simulation, and building robots the way companies do</h2>
+        <p><b>Goal:</b> Build robot in ROS 2, simulate it, make it map a room and navigate autonomously. You can do all of it with no hardware, on normal laptop, no NVIDIA GPU.</p>
+        <h3>Which ROS 2 to install</h3>
+        <table class="price-table"><tr><th>Release</th><th>Date</th><th>EOL</th><th>Ubuntu</th></tr>
+          <tr><td><b>Lyrical Luth (LTS)</b></td><td>May 2026</td><td>May 2031</td><td>26.04</td></tr>
+          <tr><td>Jazzy Jalisco (LTS)</td><td>May 2024</td><td>May 2029</td><td>24.04</td></tr>
+          <tr><td>Kilted Kaiju</td><td colspan="3">EOL 31 Dec 2026 — do not start here</td></tr>
+        </table>
+        <div class="callout"><b>ROS 1 is dead.</b> Noetic EOL 31 May 2025. If you see catkin_make, roscore, rosrun, rospy, XML-only launch — close tab. ROS 2 uses colcon build, no master, ros2 run, Python launch files.</div>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://docs.ros.org/en/jazzy/Tutorials.html" target="_blank">Official ROS 2 Tutorials (Jazzy)</a><p>Canonical reference: nodes, topics, services, actions, tf2, URDF.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://www.theconstruct.ai/" target="_blank">The Construct</a><p>Browser-based ROS env with simulated robots — no Ubuntu dual-boot hell. Free tier includes 3 courses.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://articulatedrobotics.xyz/tutorials/" target="_blank">Articulated Robotics — Josh Newans</a><p>Best free end-to-end narrative: URDF → sim → ros2_control → Pi + lidar → SLAM → Nav2.</p></div></div>
+        </div>
+        <h3>Simulation — naming fixed</h3>
+        <p>Gazebo Classic 1-11 EOL Jan 2025. It was rewritten as Ignition Gazebo, renamed back to Gazebo Apr 2022 (ign → gz). Current: Fortress, Garden, Harmonic, Ionic, Jetty. Pair: Humble+Fortress, Jazzy+Harmonic, Kilted+Ionic, Lyrical+Jetty.</p>
+        <ul>
+          <li><b>Gazebo:</b> Learn first, natively wired into ROS 2, runs on laptop</li>
+          <li><b>MuJoCo:</b> Fastest accurate contact dynamics, CPU-first, research standard for locomotion/learning</li>
+          <li><b>Isaac Sim:</b> Photoreal + synthetic data, requires RTX 4080 16GB VRAM min, A100/H100 not supported (no RT cores)</li>
+          <li>Skip PyBullet (no release since 2022), Watch Genesis (v1.0 fresh, no ROS 2)</li>
+        </ul>
+        <h3>SLAM & Nav2</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://docs.nav2.org/rolling/getting_started/index.html" target="_blank">Nav2 Getting Started</a><p>Launches Nav2 in sim in under 5 min, pre-configured VS Code dev container.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://github.com/SteveMacenski/slam_toolbox" target="_blank">SLAM Toolbox</a><p>Currently supported ROS 2 SLAM library.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://www.hiwonder.com/products/mentorpi-m1" target="_blank">Hardware: Hiwonder MentorPi M1 $299.99 (ROS 2 Humble, Pi 5, lidar+depth)</a></div></div>
+        </div>
+        <div class="milestone"><b>Month 4 Milestone:</b> ROS 2 nodes in Python+C++ (topics/services/actions), xacro with correct inertias, Gazebo lidar+camera, ros2_control diff_drive_controller, SLAM Toolbox map + Nav2 autonomous nav, diagnose broken TF tree.</div>
+      </div>
+
+      <!-- MONTH 5 -->
+      <div class="section" id="m5">
+        <div class="eyebrow"><div class="pill">Month 5</div></div>
+        <h2>The maths that makes robots actually work</h2>
+        <p><b>Goal:</b> Understand and implement control and perception underneath everything you've built.</p>
+        <h3>Control theory — PID → LQR → MPC</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://www.mathworks.com/videos/series/understanding-pid-control.html" target="_blank">Understanding PID Control — MATLAB Tech Talks</a><p>7 parts: integrator windup, derivative filtering, tuning.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://underactuated.csail.mit.edu/index.html" target="_blank">Underactuated Robotics — Russ Tedrake MIT</a><p>Where control becomes robotics: pendulums, cart-poles, walking, LQR, MPC.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://fbswiki.org/wiki/index.php/Feedback_Systems:_An_Introduction_for_Scientists_and_Engineers" target="_blank">Feedback Systems — Åström & Murray (free PDF Princeton)</a></div></div>
+        </div>
+        <h3>Kinematics & dynamics</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="http://hades.mech.northwestern.edu/index.php/Modern_Robotics" target="_blank">Modern Robotics — Kevin Lynch Northwestern (free book + videos)</a><p>Standard textbook, screw theory product-of-exponentials, cleaner than DH.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://github.com/petercorke/robotics-toolbox-python" target="_blank">Robotics Toolbox for Python — Peter Corke</a><p>FK, Jacobian, IK, trajectory, 50+ real robot models.</p></div></div>
+        </div>
+        <h3>Perception & manipulation</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://courses.opencv.org/courses/course-v1:OpenCV+Bootcamp+CV0/about" target="_blank">FREE OpenCV Bootcamp (Official)</a><p>2-3h from OpenCV themselves.</p></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html" target="_blank">OpenCV Camera Calibration tutorial</a><p>Every robotics engineer must do this from memory.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://moveit.picknik.ai/main/doc/tutorials/getting_started/getting_started.html" target="_blank">MoveIt 2 Getting Started</a></div></div>
+        </div>
+        <div class="milestone"><b>Month 5 Milestone:</b> PID with plot, LQR on cart-pole, FK by hand + numerical IK, explain singularity by pointing at robot doing it, camera calibration pixel→3D, MoveIt 2 pick & place with collision objects.</div>
+      </div>
+
+      <!-- MONTH 6 -->
+      <div class="section" id="m6">
+        <div class="eyebrow"><div class="pill">Month 6</div></div>
+        <h2>Robot learning, specialisation, and becoming hireable</h2>
+        <p><b>Goal:</b> Pick one direction, build portfolio piece, start applying. You now have whole stack: electronics, embedded, mechanical, ROS 2, control, perception.</p>
+        <h3>Part one: modern robot learning — LeRobot</h3>
+        <p>LeRobot is Hugging Face's PyTorch library for real-world robotics — open hub low-cost robot-learning world converged on. Workflow: teleoperate → record → train → deploy. Drive by hand, save sync video+action, policy learns to imitate, runs on its own.</p>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://huggingface.co/docs/lerobot/index" target="_blank">LeRobot docs</a></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://github.com/huggingface/lerobot" target="_blank">LeRobot repo — 26k+ stars Apache 2.0</a></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://huggingface.co/learn/robotics-course/unit0/1" target="_blank">Hugging Face Robotics Course (no hardware required)</a><p>30-45 min per unit, entirely sim + public datasets.</p></div></div>
+          <div class="res"><div class="n">4</div><div><a href="https://huggingface.co/docs/lerobot/so101" target="_blank">SO-101 setup guide</a></div></div>
+        </div>
+        <p><b>Focus:</b> record-train-deploy end-to-end, dataset quality (sloppy demos = sloppy policy), ACT (predict chunks), Diffusion Policy (+46.9% avg improvement across 12 tasks).</p>
+        <div class="task"><b>Practice Task</b><p>Record 50 demos single task on SO-101 (pick cube → bin), train ACT, deploy. Will work ~50% time. Record 50 more covering failure cases, retrain. Document success rate before/after — that number is portfolio piece.</p></div>
+
+        <h3>Vision-language-action models</h3>
+        <table class="price-table"><tr><th>Model</th><th>Weights</th><th>Notes</th></tr>
+          <tr><td>π₀, π₀-FAST, π₀.₅ — Physical Intelligence</td><td>Apache 2.0 open, 10k+ hrs data</td><td><a href="https://github.com/Physical-Intelligence/openpi">openpi</a> — transfer not guaranteed, honest warning</td></tr>
+          <tr><td>OpenVLA 7B</td><td>Fully open, 970k episodes Open X-Embodiment</td><td><a href="https://openvla.github.io/">Best documented</a></td></tr>
+          <tr><td>GR00T N1.7 — NVIDIA</td><td>Code Apache 2.0, weights NVIDIA Open Model License</td><td>Needs 16GB+ VRAM <a href="https://github.com/Nvidia/Isaac-GR00T">Isaac-GR00T</a></td></tr>
+          <tr><td>SmolVLA — HF</td><td>Compact, for affordable hardware</td><td>Right one to fine-tune on SO-101 <a href="https://huggingface.co/lerobot/smolvla_base">smolvla_base</a></td></tr>
+        </table>
+
+        <h3>Reinforcement learning</h3>
+        <div class="resources">
+          <div class="res"><div class="n">1</div><div><a href="https://github.com/google-deepmind/mujoco_playground" target="_blank">MuJoCo Playground — GPU-accel, Colab tutorials, start here</a></div></div>
+          <div class="res"><div class="n">2</div><div><a href="https://github.com/isaac-sim/IsaacLab" target="_blank">NVIDIA Isaac Lab — 16 robot models, 30+ envs, BSD-3</a><p>Industry standard legged/humanoid sim-to-real, needs RTX hardware.</p></div></div>
+          <div class="res"><div class="n">3</div><div><a href="https://rail.eecs.berkeley.edu/deeprlcourse" target="_blank">CS 285 Deep RL — Sergey Levine UC Berkeley</a></div></div>
+        </div>
+
+        <h3>Pick a direction</h3>
+        <table class="price-table"><tr><th>Direction</th><th>Best if</th><th>Focus</th></tr>
+          <tr><td><b>1. Robot learning & embodied AI</b></td><td>Want frontier companies, highest ceiling</td><td>LeRobot, VLA fine-tuning, imitation, RL, sim, PyTorch — highest-paid, most competitive</td></tr>
+          <tr><td><b>2. Autonomy & mobile</b></td><td>Largest number of jobs</td><td>ROS 2, Nav2, SLAM, perception, fusion, C++ — controls + field service = 20%+ postings</td></tr>
+          <tr><td><b>3. Embedded/mechatronics/integration</b></td><td>Want to work immediately, contractor</td><td>Firmware, motor control, real-time, PLCs, safety — least glamorous, most consistently employable. 66% projects report delays from certification</td></tr>
+        </table>
+
+        <h3>Portfolio — what recruiters actually screen</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0">
+          <div class="callout" style="border-left:4px solid #16a34a"><b style="color:#16a34a">High signal</b><br>• GitHub repos with logged metrics + commit history showing debugging<br>• Real-robot deployment with reliability data<br>• Public datasets on LeRobot Hub<br>• Contributions to ROS 2 core, Nav2, MoveIt, Isaac Lab, LeRobot<br>• Systems integration: sensor→actuator→planning→control with video</div>
+          <div class="callout" style="border-left:4px solid #dc2626"><b style="color:#dc2626">Red flags</b><br>• Still on EOL ROS 1<br>• Claimed projects can't survive 3 follow-up questions<br>• Pure deep-learning, no kinematics/embodiment<br>• Tutorial completion certificates</div>
+        </div>
+        <div class="task"><b>Portfolio task</b><p>Take 3 best projects, rewrite READMEs: video at top, wiring/architecture diagram, actual numbers measured, section “what broke and how I fixed it”. That last section is highest-value — cannot be faked from tutorial.</p></div>
+
+        <h3>Interviews</h3>
+        <p>Not software interviews — leetcode weaker predictor. Expect: IK questions, PID/feedback, sensor fusion/Kalman, SLAM concepts, RRT, C++ vs Python tradeoffs. At good companies: simulation debugging (broken MuJoCo/Isaac controller), ROS 2 architecture problem, long conversation about specific past failure.</p>
+        <p>Glassdoor has 1,721 robotics engineer interview Qs from 877 companies: <a href="https://www.glassdoor.com/Interview/robotics-engineer-interview-questions-SRCH_KO0,17.htm" target="_blank">glassdoor.com</a></p>
+      </div>
+
+      <div class="section" id="conclusion">
+        <h2>Conclusion — What you can expect after 6 months</h2>
+        <p>This roadmap will not make you a senior robotics engineer in six months. Senior means 5+ years deploying real-time systems on physical robots, every job listing says so explicitly.</p>
+        <p><b>What it will make you is someone who can build, debug and ship working robots, who understands stack from electrical layer up to learned policy, and who has physical portfolio to prove it.</b> That is enough to get into the field, and field is where compounding happens.</p>
+        
+        <h4>The demand picture, honestly</h4>
+        <p>The capital is real. Physical AI startups raised $47.4B in H1 2026 across 521 deals, more than 2022-2024 combined per Crunchbase. Narrower robotics-only funding hit $18.8B by late June 2026 vs $15B all of 2025.</p>
+        <p>Individual rounds: Neura Robotics $1.4B, Skild AI $1.4B, Apptronik $520M, Figure $39B post-money per Robot Report 2026 outlook.</p>
+        <p>But hiring lagging capital. North American robot orders +2.0% units H1 2026 per A3. US installations -9% 2024 per IFR. BLS occupational code containing robotics engineers projects 1-2% growth, not 10% figure quoted in career articles with no source.</p>
+        <p>Robotics much smaller labour market than software. BLS: 106,100 annual openings software developers vs ~57,200 for mechanical+electrical+industrial engineers combined.</p>
+        <p>Accurate claim: money arriving faster than qualified people, shortage concentrated in specific specialisms, entry tier unusually open to people without degrees. Largest robotics job category by posting volume is Automation and Robotics Technician at 20.3% of 3,113 postings, 68% technician roles satisfied by associate's degree or certificate per O*NET.</p>
+      </div>
+
+      <div class="section" id="pay">
+        <h2>What it pays</h2>
+        <p>Full-time US — sources disagree, so range + source rather than one flattering number:</p>
+        <table class="price-table">
+          <tr><th>Level</th><th>Range</th><th>Source</th></tr>
+          <tr><td>Median robotics engineer</td><td>$122,930</td><td>O*NET/BLS — only official figure</td></tr>
+          <tr><td>Entry</td><td>$80k-$100k</td><td>Payscale/Salary.com, higher coastal/well-funded</td></tr>
+          <tr><td>Mid 3-6 yrs</td><td>$120k-$165k</td><td>Conventional employers</td></tr>
+          <tr><td>Senior</td><td>$160k-$230k</td><td>Mainstream</td></tr>
+          <tr><td>Frontier physical-AI</td><td>$200k-$400k base</td><td>Figure Helix AI Engineer $200-400k, Perception $200-350k live listing</td></tr>
+          <tr><td>Foundation model specialist</td><td>$280k-$475k TC</td><td>Recruiter placement data, heavily equity-weighted</td></tr>
+        </table>
+        <p>Outside US: Germany ~€70k median total Glassdoor, Switzerland CHF 95k, UK £32k-£50k base, India ~₹653k.</p>
+        <h4>Freelance & contract</h4>
+        <ul>
+          <li>Upwork robotics: $22-$70/hr, clustering $30-$50</li>
+          <li>ROS project work: $500-$1,200 node, $1,200-$2,500 launch config, $4,500-$7,000 sensor integration pipeline, $7k-$12k full system architecture</li>
+          <li>ZipRecruiter ROS dev avg $52.84/hr</li>
+          <li>In robot cell, robot itself ~25% total cost. Other 75% is engineering, safety, integration. $35k arm becomes $80k working system — $45k gap is what you are selling</li>
+        </ul>
+        <h4>Entry points needing no degree</h4>
+        <ul>
+          <li>Teleoperation & data collection avg $28.24/hr, most $22.12-$32.93. Figure Humanoid Robot Operator $25-$35/hr no degree, Weave Robotics $25/hr</li>
+          <li>Robotics technician median $73,900 per BLS, typically associate's degree</li>
+        </ul>
+        <div class="callout">Be clear-eyed: that pay band is mostly most expensive metros US, often on-site physically demanding. Genuine foot in door at frontier companies, not comfortable living in SF.</div>
+        
+        <hr class="sep">
+        <h2>Now what you should actually take away</h2>
+        <p><b>Build the projects, do not read about them.</b> Pick one build from each month and actually make it. Line follower, balancing robot, arm, ROS 2 navigation stack, trained policy. Break them, fix them, film them, push to GitHub. Every recruiter source checked: portfolio-first sourcing beats keyword search, projects that get people hired have logged metrics and visible debugging history.</p>
+        <p><b>Write down what broke.</b> Anyone can post working demo. Almost nobody documents four things that failed first and how they diagnosed each one. That write-up is closest thing to proof you can engineer, reason your repo survives third follow-up question in interview.</p>
+        <p><b>Start before you feel ready.</b> Apply for technician role, take teleoperation shift, contribute small fix to Nav2, message founder of three-person robotics startup. Gap between "I am learning robotics" and "I work in robotics" is almost entirely gap of nerve, nobody in field will ever tell you studied enough.</p>
+        <p>Six months of two focused hours a day is enough to change what you are able to do with your hands and your head. Hardware cheaper than ever, software open, courses free, people who can make machines work genuinely scarce.</p>
+        <p style="font-size:22px;font-weight:800;margin-top:20px">Go build something that moves.</p>
+      </div>
+
+      <div class="footer">
+        Formatted from X thread by <a href="https://x.com/DeRonin_/status/2095180126359105955" target="_blank">@DeRonin_</a> • Original status 2095180126359105955 • Prices & links verified Sep 2026 per author • YouTube: <a href="https://www.youtube.com/@deronin_23">@deronin_23</a><br><br>
+        <a class="btn" href="https://x.com/DeRonin_/status/2095180126359105955" target="_blank">View original thread ↗</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+const bar = document.getElementById('bar');
+window.addEventListener('scroll',()=>{
+  const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  bar.style.width = (scrolled*100)+'%';
+  let current='';
+  sections.forEach(s=>{
+    const top = s.offsetTop - 140;
+    if(window.scrollY >= top) current = s.id;
+  });
+  tocLinks.forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+  });
+});
+</script>
+</body>
+</html>
